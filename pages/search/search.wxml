@@ -1,0 +1,23 @@
+<!--pages/search/search.wxml-->
+<view class='container'>
+  <view class='top_action'>
+    <wxc-search class="search_box" show-icon="{{true}}" button="搜索" btn-color="#f62b12" placeholder="搜索店铺内商品" bind:submit="submitForm" bind:confirm="onConfirm" bind:onSearchClear="onSearchClear"></wxc-search>
+  </view>
+  <view class='goods_container'>
+    <import src="../template/template.wxml" />
+    <template is="goodsSearchResultList" data="{{goods:goods}}"/>
+  </view>
+  
+  <view class="weui-loadmore">
+    <view class="weui-loading" hidden="{{isHideLoadMore || loaded}}"></view>
+    <view class="weui-loadmore__tips" hidden="{{isHideLoadMore}}"> {{loaded?"没有更多的搜索结果了":"正在加载"}} </view>
+  </view>
+
+  <!-- <view class='empty_search' style="top:{{searchEmptyTop}}px"  wx:if="{{goods!=null&&goods.length==0}}">
+    <image class='icon'></image>
+    <text>没找到符合条件的商品</text>
+  </view> -->
+ <wxc-abnor type="SEARCH"  wx:if="{{goods!=null&&goods.length==0}}"></wxc-abnor>
+</view>
+<wxc-loading is-show="{{isLoading}}" type="mall"></wxc-loading>
+<i-toast id="toast" />

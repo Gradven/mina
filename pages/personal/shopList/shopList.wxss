@@ -1,0 +1,140 @@
+.none{
+  position: relative;
+  top:300rpx;
+  color:#999;
+  text-align: center;
+}
+page {
+  display: block;
+  min-height: 100%;
+  background-color: whitesmoke;
+}
+
+.scroll-view-wrap {
+  position: relative;
+  height: 256rpx;
+  background-color: white;
+  white-space: nowrap;
+  margin-right: 0rpx;
+  box-sizing: border-box;
+}
+
+.scroll-view-catalog {
+  width: 100%;
+  height: 250rpx;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+.scroll-view-catalog::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.catalog-item {
+  display: inline-block;
+  width: 150rpx;
+  margin-top: 50rpx;
+}
+.catalog-item-img {
+  display: block;
+  margin: 15rpx auto;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+.catalog-item text {
+  display:block;
+  width:100%;
+  font-size: 20rpx;
+  text-align:center;
+  padding: 20rpx 0;
+  color: #808080;
+}
+
+.catalog-item-active-img {
+  display: block;
+  margin: 0 auto;
+  width: 116rpx;
+  height: 116rpx;
+  border-radius: 50%;
+  box-sizing: border-box;
+  box-shadow: 0rpx 0rpx 10rpx 8rpx rgba(0, 0, 0, 0.15);
+}
+.catalog-item-active text {
+  font-size: 26rpx;
+  width:100%;
+  text-align:center;
+  padding: 20rpx 0;
+  color: #4d4d4d;
+}
+
+.top_action {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  width: 100%;
+  height: 106rpx;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+.top_action .search {
+  width: 610rpx;
+  margin-left: 30rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  color: #d1d1d1;
+  border-radius: 3px;
+  border: 2rpx solid #f4f4f4;
+  font-size: 28rpx;
+  padding-left: 70rpx;
+  background: #f5f5f5 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E %3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z' fill='%23b7b7b7'/%3E %3Cpath d='M0 0h24v24H0z' fill='none'/%3E %3C/svg%3E") 15rpx center / 50rpx no-repeat;
+  box-sizing: border-box;
+}
+
+.top_action .search_box {
+  width: 720rpx;
+  margin-left: 30rpx;
+  box-sizing: border-box;
+}
+
+.top_action .shop_cart {
+  width: 60rpx;
+  height: 60rpx;
+  margin-left: 25rpx;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E %3Cpath d='M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z' fill='%23373737'/%3E %3Cpath d='M0 0h24v24H0z' fill='none'/%3E %3C/svg%3E ") center center /48rpx no-repeat;
+}
+
+.content_container{
+   width: 100%;
+}
+
+.shopInfoList .item{
+  clear:both;
+  margin-bottom:20rpx;
+  padding:20rpx;
+  height:190rpx;
+  background:#fff;
+  box-sizing:border-box;
+}
+.shopInfoList .item image{
+  float:left;
+  display:block;
+  margin-right:20rpx;
+  width:150rpx;
+  height:150rpx;
+  border-radius:150rpx;
+}
+.shopInfoList .item .content{
+  float:left;
+  line-height:150rpx;
+}
+.more{
+  font-size: 24rpx;
+  line-height: 72rpx;
+  text-align: center;
+  color:#999;
+}

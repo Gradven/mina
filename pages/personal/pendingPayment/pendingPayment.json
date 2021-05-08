@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "待付款",
+  "usingComponents": {
+    "i-icon": "../../../dist/icon/index",
+    "wxc-abnor": "../../../dist/wxc-abnor/index",
+    "wxc-loading": "../../../dist/wxc-loading/index",
+    "wxc-price": "../../../dist/price/index",
+    "wxc-abnor": "../../../dist/wxc-abnor/index"
+  }
+}

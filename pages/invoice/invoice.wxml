@@ -1,0 +1,31 @@
+<view class='container bottomPadding'>
+
+  <wxc-abnor type="DATA" title="您还未添加抬头信息" wx:if="{{invoiceList!=null && invoiceList.length==0}}"></wxc-abnor>
+  <view class='list' wx:else>
+    <view wx:for="{{invoiceList}}" wx:key="{{item.id}}" wx:if="{{invoiceList!=null && invoiceList.length>0}}" class="item {{item.disable?'disable':''}}" data-index="{{index}}" bindtap="onInvoiceSelect">
+      <i-checkbox wx:if="{{showChecked}}" i-class='checkBox' color="#212121" checked="{{item.checked}}" disabled="{{item.disable}}" data-index="{{index}}" bindchange="handleItemCheckedChange">
+      </i-checkbox>
+      <view class="content" style="padding-left:{{showChecked?0:40}}rpx;width:{{showChecked? 640:750}}rpx">
+
+        <text class="contract {{item.disable?'disable':''}}">{{item.title}}</text>
+
+        <view class='divider'></view>
+        <view class='action'>
+          <text class="invoice_type {{item.disable?'disable':''}}">{{item.invoiceType}}</text>
+          <view catchtap='preventPop'>
+            <i-icon type="trash" size="50" color="{{item.disable?'#bbbec4':'#80848f'}}" data-invoice_id="{{item.id}}" bindtap='showDelConfirmDialog' wx:if="{{showDelIcon}}" />
+            <i-icon type="editor" size="50" color="{{item.disable?'#bbbec4':'#80848f'}}" bindtap='editInvoice' data-invoice_index="{{index}}" style='margin-left:30rpx' />
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <wxc-loadmore is-end="{{true}}" text="End" wx:if="{{invoiceList.length>0}}" style="margin-top:30rpx"></wxc-loadmore>
+</view>
+
+
+<text class="add_btn" bindtap='addNewInvoice'>添加新的抬头</text>
+
+
+<wxc-loading is-show="{{isLoading}}" type="mall"></wxc-loading>
+<wxc-toast is-show="{{xToast.show}}" icon="{{xToast.icon}}" text="{{xToast.title}}" icon-color="#fe5a5d"></wxc-toast>

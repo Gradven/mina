@@ -1,0 +1,71 @@
+<view class='container header_float' wx:if="{{!userInfo.shopId}}">
+  <view class='top_action_shop' style="position:relative" bindtap='searchShop'>
+    <wxc-search class="search_box" show-icon="{{true}}" mode="static" radius="50" align="center"
+     btn-color="#f62b12" placeholder="搜索店铺"></wxc-search>
+  </view>
+  <view class='content_container' wx:if="{{lastShopList.length > 0}}" style="margin-top:{{'fixed'==topActionPosition?106:0}}rpx">
+    <view class="scroll-view-wrap" style="margin-left: {{marginLeft}}rpx">
+      <view class='title'>最近访问过的店铺</view>
+      <scroll-view scroll-x class="scroll-view-catalog" scroll-with-animation="true" scroll-left="{{scrollLeft}}">
+        <view wx:key="{{index}}" class="catalog-item" wx:for="{{lastShopList}}" bindtap="intoShop" data-id="{{item.id}}">
+          <image class="catalog-item-img" src="{{item.logo}}"></image>
+          <text>{{item.name}}</text>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <view class='recommend-box' wx:if="{{recommendList.length > 0}}">
+    <view class='title'>推荐店铺</view>
+    <view class='item' wx:key='index' wx:for="{{recommendList}}"
+      bindtap="intoShop" data-id="{{item.id}}">
+      <image src='{{item.logo}}'></image>
+      <text>{{item.name}}</text>
+    </view>
+  </view>
+</view>
+
+<view class='market-box' wx:if="{{userInfo.shopId}}">
+  <view class='top_action' bindtap='searchGoods'>
+    <wxc-search class="search_box" show-icon="{{true}}" mode="static" radius="50" align="center"
+      btn-color="#f62b12" placeholder="搜索商品"></wxc-search>
+  </view>
+  <view class='category' wx:if="{{goodsCategory.id}}">
+    <view class='item' wx:for="{{goodsCategory.objectList}}" wx:key="{{item.id}}"
+    bindtap='toGoodsCategoryPage' data-id="{{item.id}}" data-name="{{item.name}}" data-pids="{{item.parentIds}}">
+      <image class='logo' src="{{item.picUrl}}" mode='aspectFit'></image>
+      <text>{{item.name}}</text>
+    </view>
+    <view class='item' bindtap='toGoodsCategoryPage' data-id="0">
+      <image class='logo' src='https://xiaomaimai-test.oss-cn-hangzhou.aliyuncs.com/icon/more.png'></image>
+      <text>查看更多</text>
+    </view>
+    <view class='clear'></view>
+  </view>
+  <view class='tabs'>
+    <view class='{{activeIndex==index?"item on":"item"}}' wx:key="{{index}}" wx:for="{{tabs}}"
+     data-index='{{index}}' bindtap='setIndex'>{{item.name}}</view>
+    <view class='activeTag' style="{{ 'left: ' + scrollLeft + 'px' }}"></view>
+  </view>
+  <view class='list' wx:if="{{userInfo.id}}">
+    <view class='tip_holder' wx:if="{{false}}">
+      <view class='other_shop'>
+        <text>您正在浏览他人店铺，点击按钮回到自己店铺。</text>
+        <text class='back_btn' bindtap='backToMyShop'>回自己店铺</text>
+      </view>
+    </view>
+    <goods-item item="{{item}}" shopInfo="{{shopInfo}}" wx:if="{{userInfo.shopId && activeIndex == 0}}" 
+      wx:for="{{pageSelectGoods_1}}" wx:key="{{item.id}}"
+      bindtapitem='tapitem'></goods-item>
+    <goods-item item="{{item}}" shopInfo="{{shopInfo}}" wx:if="{{userInfo.shopId && activeIndex == 1}}" 
+      wx:for="{{pageSelectGoods_2}}" wx:key="{{item.id}}"
+      bindtapitem='tapitem'></goods-item>
+    <goods-item item="{{item}}" shopInfo="{{shopInfo}}" wx:if="{{userInfo.shopId && activeIndex == 2}}" 
+      wx:for="{{pageSelectGoods_3}}" wx:key="{{item.id}}"
+      bindtapitem='tapitem'></goods-item>
+  </view>
+  <i-modal title="温馨提示" visible="{{ showModel }}" actions="{{ modelBtnList }}" bind:click="handleModelClick">
+    <view>请先交纳技术服务年费</view>
+  </i-modal>
+</view>
+
+

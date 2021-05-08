@@ -1,0 +1,42 @@
+<view class='container bottomPadding'>
+
+  <wxc-abnor type="DATA" title="您还未添加地址信息" wx:if="{{addressList!=null && addressList.length==0}}"></wxc-abnor>
+  <view class='list' wx:else>
+    <view class='item' wx:for="{{addressList}}" wx:key="{{item.id}}" wx:if="{{addressList!=null && addressList.length>0}}" data-index="{{index}}" bindtap="onAddressSelect">
+      <i-checkbox wx:if="{{showChecked}}" i-class='checkBox' color="#212121" checked="{{item.id == checkedId}}" data-index="{{index}}"   bindchange="handleItemCheckedChange" >
+      </i-checkbox>
+      <view class="content" style="padding-left:{{showChecked?0:40}}rpx;width:{{showChecked? 640:750}}rpx">
+        <view class='contract'>
+          <text class='consignee'>{{item.consignee}}</text>
+          <text class='phone'>{{item.phoneHidden}}</text>
+        </view>
+        <text class='address'>{{item.addressSummary}}</text>
+
+        <text class='accept'>{{item.accept}}</text>
+        <view class='divider'></view>
+        <view class='action' catchtap='preventPop'>
+          <i-icon type="trash" size="50" color="#80848f" data-address_id="{{item.id}}" bindtap='showDelConfirmDialog' wx:if="{{showDelIcon}}" />
+          <i-icon type="editor" size="50" color="#80848f" bindtap='editAddress' data-address_index="{{index}}" style='margin-left:30rpx' />
+        </view>
+      </view>
+    </view>
+  </view>
+  <wxc-loadmore is-end="{{true}}" text="End" wx:if="{{addressList.length>0}}" style="margin-top:30rpx"></wxc-loadmore>
+</view>
+
+
+<view class="foot_action {{hasAddress?'foot_action_row':''}} ">
+  <view class="wx_import {{hasAddress?'btn_row':''}} " bindtap='useWxAddress'>
+    <wxc-icon size="50" type="weixin" color="#4cb033" wx:if="{{!hasAddress}}"> </wxc-icon>
+    <text class="text {{hasAddress?'text_row':''}} "> {{!hasAddress?"一键导入微信地址":"使用微信地址"}}</text>
+  </view>
+  <view class="add_address {{hasAddress?'btn_row':''}} " bindtap='toAddAddress'>
+    <wxc-icon size="35" type="add" color="#fff" wx:if="{{!hasAddress}}"> </wxc-icon>
+    <text class="text {{hasAddress?'text_row':''}} "> 添加地址</text>
+  </view>
+
+</view>
+
+
+<wxc-loading is-show="{{isLoading}}" type="mall"></wxc-loading>
+<wxc-toast is-show="{{xToast.show}}" icon="{{xToast.icon}}" text="{{xToast.title}}" icon-color="#fe5a5d"></wxc-toast>

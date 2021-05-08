@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "实名认证",
+  "usingComponents": {
+    "i-icon": "../../../dist/icon/index",
+    "i-toast": "../../../dist/toast/index"
+  }
+}

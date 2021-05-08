@@ -1,0 +1,19 @@
+<view class='none' wx:if="{{!isLoading && lastShopList.length <= 0}}">
+  <i-icon type="shop_fill" size='300' color='#999' />
+  <view>您还没有访问过任何店铺</view>
+</view>
+<view class='container header_float' wx:if="{{lastShopList.length > 0}}">
+  <view class='shopInfoList'>
+    <view class='item' wx:key="{{index}}" wx:for="{{lastShopList}}" 
+    data-id="{{item.id}}" bindtap='intoShop'>
+      <image src="{{item.logo}}"></image>
+      <view class='content'>
+        {{item.name}}
+      </view>
+    </view>
+  </view>
+</view>
+
+<wxc-loading is-show="{{isLoading}}" type="mall"></wxc-loading>
+
+<i-toast id="toast" />

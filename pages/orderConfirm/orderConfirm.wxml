@@ -1,0 +1,48 @@
+<!--pages/orderConfirm/orderConfirm.wxml-->
+<view class='container footer_float'>
+  <view class='delivery_address' bindtap='chooseAddress'>
+    <view class='address_select'>
+      <text>{{!!addressInfo?'':'请选择'}}收货地址</text>
+      <i-icon type="enter" size="40" color="#bcc0c3" wx:if="{{addressInfo == null}}"/>
+    </view>
+    <view class='consignee_info' wx:if="{{addressInfo != null}}">
+      <text class='grow'>{{addressInfo.consignee}}</text>
+      <text class='tel'>{{addressInfo.phoneHidden}}</text>
+    </view>
+    <text class='location' wx:if="{{addressInfo != null}}" >{{addressInfo.addressSummary}}</text>
+  </view>
+  <view class='goods_container' wx:if="{{goods}}">
+    <text class='title'>商品信息</text>
+    <view class='item' wx:for="{{goods}}" wx:key="item.productId">
+      <view class='goods'>
+        <image class='img' mode='aspectFill' src="{{item.img}}"></image>
+        <view class='intro'>
+          <text class='name line_two'>{{item.name}}</text>
+          <view class='holder'></view>
+           <text class='specs'>{{item.specs}}</text>
+           <view class='price'>
+            <text class='grow'>￥{{item.price}}</text>
+            <text>x{{item.goodsNumber}}</text>
+           </view>
+        </view>
+       </view>
+       <view class='row'>
+        <text>七天放心退</text>
+        <text>{{item.service == 1?'':'不'}}支持</text>
+       </view>
+        <view class='row' data-index="{{index}}" wx:if="{{item.invoiceType}}" bindtap='chooseInvoice'>
+        <text>发票</text>
+        <text>{{item.invoiceInfo? item.invoiceInfo.title :'不需要'}}</text>
+       </view>
+    </view>
+  </view>
+  <view class='action_footer'>
+    <text class='grow'>合计</text>
+    <text class='price'>￥{{amountTotal}}</text>
+    <text class='settle' bindtap='createOrder'>提交订单</text>
+  </view>
+</view>
+
+
+<wxc-loading is-show="{{isLoading}}" type="mall"></wxc-loading>
+<wxc-toast is-show="{{xToast.show}}" icon="{{xToast.icon}}" text="{{xToast.title}}" icon-color="#fe5a5d"></wxc-toast>

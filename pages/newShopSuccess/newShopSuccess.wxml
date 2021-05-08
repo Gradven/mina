@@ -1,0 +1,12 @@
+<view class='content-box'>
+  <view class='user-info' wx:if="{{userInfo.nickname}}">
+    <image src="{{userInfo.avatar}}" ></image>
+    <view class='nickname'>{{userInfo.nickname}}</view>
+    <view class='message'>
+      恭喜您申请成功
+    </view>
+    <view class='btn-box'>
+      <view class='btn' bindtap='inToShop'>进入店铺</view>
+    </view>
+  </view>
+</view>

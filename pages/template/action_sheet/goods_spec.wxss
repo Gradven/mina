@@ -1,0 +1,338 @@
+.i-as {
+  position: fixed;
+  width: 100%;
+  box-sizing: border-box;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #f7f7f7;
+  transform: translate3d(0, 100%, 0);
+  transform-origin: center;
+  transition: all 0.2s ease-in-out;
+  z-index: 900;
+  visibility: hidden;
+}
+
+.i-as-show {
+  transform: translate3d(0, 0, 0);
+  visibility: visible;
+}
+
+.i-as-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 900;
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.i-as-mask-show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.i-as-action-item {
+  position: relative;
+}
+
+.i-as-action-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  pointer-events: none;
+  box-sizing: border-box;
+  border: 0 solid #e9eaec;
+  border-bottom-width: 1px;
+}
+
+.i-as-header {
+  background: #fff;
+  text-align: center;
+  position: relative;
+  font-size: 12px;
+  color: #80848f;
+}
+
+.i-as-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  pointer-events: none;
+  box-sizing: border-box;
+  border: 0 solid #e9eaec;
+  border-bottom-width: 1px;
+}
+
+.i-as-cancel {
+  margin-top: 6px;
+}
+
+.i-as-btn-loading {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  width: 12px;
+  height: 12px;
+  background: 0 0;
+  border-radius: 50%;
+  border: 2px solid #e5e5e5;
+  border-color: #666 #e5e5e5 #e5e5e5 #e5e5e5;
+  animation: btn-spin 0.6s linear;
+  animation-iteration-count: infinite;
+}
+
+.i-as-btn-text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.i-as-btn-icon {
+  font-size: 14px !important;
+  margin-right: 4px;
+}
+
+@keyframes btn-spin {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.as_spec {
+  width: 100%;
+  height: 980rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+.as_spec .container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 900rpx;
+  background-color: white;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.as_spec  .goods_img {
+  position: absolute;
+  width: 220rpx;
+  height: 220rpx;
+  top: 40rpx;
+  left: 50rpx;
+  border-radius: 20rpx;
+  background-color: white;
+  box-sizing: border-box;
+  box-shadow: 0 10rpx 30rpx rgba(0, 0, 0, 0.15);
+}
+
+.as_spec .close {
+  position: absolute;
+  right: 30rpx;
+  top: 0;
+}
+
+.as_spec .container .name {
+  width: 400rpx;
+  margin-top: 30rpx;
+  margin-left: 300rpx;
+  height: 90rpx;
+  line-height: 45rpx;
+  font-size: 30rpx;
+  color: #495060;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.as_spec .container .price {
+  width: 400rpx;
+  margin-top: 10rpx;
+  margin-left: 300rpx;
+  font-size: 36rpx;
+  color: #1c2438;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: baseline;
+}
+
+.as_spec .container .price .profit{
+  font-size: 24rpx;
+  margin-left: 30rpx;
+  color: #fe5a5d;
+}
+
+.as_spec .container .divider {
+  background-color: #e9eaec;
+  position: absolute;
+  top: 200rpx;
+  height: 2rpx;
+  left: 50rpx;
+  right: 50rpx;
+  width: 650rpx;
+}
+
+.as_spec .container .scroll {
+  position: absolute;
+  top: 202rpx;
+  left: 50rpx;
+  width: 650rpx;
+  height: 568rpx;
+  box-sizing: border-box;
+  padding-bottom: 30rpx;
+}
+
+.as_spec .container .scroll .quantity_row {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  font-size: 28rpx;
+  margin-top: 50rpx;
+}
+
+.as_spec .container .scroll .quantity_row .quantity {
+  margin-left: 30rpx;
+}
+
+.as_spec .container .scroll .spec_row {
+  width: 100%;
+  margin-top: 30rpx;
+}
+
+.as_spec .container .scroll .spec_row .spec_name {
+  width: 100%;
+  font-size: 28rpx;
+}
+
+.as_spec .container .scroll .spec_row .spec_values {
+  width: 100%;
+  margin-top: 10rpx;
+  font-size: 28rpx;
+}
+
+.radio {
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 20rpx;
+  justify-content: flex-start;
+  margin-right: 20rpx;
+}
+
+.radio:last-child {
+  margin-right: 0rpx;
+}
+
+.radio .spec_img{
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 10rpx;
+}
+
+.radio_group {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.radio .active {
+  width: auto;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  border: 2rpx solid #fe5a5d;
+  background-color: #fef6f4;
+  border-radius: 8rpx;
+  padding: 0rpx 20rpx;
+  box-sizing: content-box;
+  color: #fe5a5d;
+}
+
+.radio .normal {
+  width: auto;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  border: 2rpx solid #495060;
+  border-radius: 8rpx;
+  padding: 0rpx 20rpx;
+  box-sizing: content-box;
+  color: #495060;
+}
+
+.radio .disable {
+  width: auto;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  border: 2rpx solid #bbbec4;
+  border-radius: 8rpx;
+  padding: 0rpx 20rpx;
+  box-sizing: content-box;
+  color: #bbbec4;
+}
+
+.as_spec .container .bottom {
+  width: 650rpx;
+  position: absolute;
+  bottom: 20rpx;
+  padding: 0rpx 50rpx;
+  height: 130rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 32rpx;
+}
+
+.as_spec .container .bottom .btn_add {
+  width: 8em;
+  line-height: 72rpx;
+  text-align: center;
+  border: 2rpx solid black;
+  border-radius: 36rpx;
+}
+
+.as_spec .container .bottom .btn_purchase {
+  width: 10em;
+  line-height: 72rpx;
+  text-align: center;
+  background-color: #fe5a5d;
+  border-radius: 36rpx;
+  color: white;
+}
+
+.as_spec .container .bottom .btn_confirm {
+  width: 650rpx;
+  line-height: 72rpx;
+  text-align: center;
+  background-color: #fe5a5d;
+  border-radius: 36rpx;
+  color: white;
+}

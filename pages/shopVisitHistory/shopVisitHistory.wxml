@@ -1,0 +1,20 @@
+<!--pages/shopVisitHistory/shopVisitHistory.wxml-->
+<view class='visitorContainer' wx:if="{{visitors}}">
+  <view class='visitor' wx:for="{{visitors}}" wx:key="{{item.id}}">
+    <image class='img' src="{{item.avatar}}" mode='aspectFill'></image>
+    <text class='name'>{{item.nickname}}</text>
+    <text class='time'>{{item.friendlyTime}}</text>
+  </view>
+</view>
+<view class='visitorContainer' wx:if="{{shops}}">
+  <view class='visitor' wx:for="{{shops}}" data-shop_id="{{item.id}}" bindtap="toShop">
+    <image class='img' src="{{item.logo}}" mode='aspectFill'></image>
+    <text class='name'>{{item.name}}</text>
+     <i-icon type="enter" size="40" color="#bcc0c3" />
+  </view>
+</view>
+ <view class="weui-loadmore" wx:if="{{(visitors && visitors.length>0)||(shops&&shops.length>0)}}">
+      <view class="weui-loading" hidden="{{dataLoaded}}"></view>
+      <view class="weui-loadmore__tips" > {{dataLoaded?"所有记录加载完成":"正在加载"}} </view>
+    </view>
+<wxc-loading is-show="{{isLoading}}" type="mall"></wxc-loading>

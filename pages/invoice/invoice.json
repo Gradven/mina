@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "发票管理",
+  "usingComponents": {
+    "wxc-icon": "../../dist/wxc-icon/index",
+    "wxc-loadmore": "../../dist/wxc-loadmore/index",
+    "wxc-popup": "../../dist/wxc-popup/index",
+    "wxc-loading": "../../dist/wxc-loading/index",
+    "wxc-abnor": "../../dist/wxc-abnor/index",
+    "i-icon": "../../dist/icon/index",
+    "i-checkbox": "../../dist/checkbox/index",
+    "wxc-toast": "../../dist/wxc-toast/index"
+  }
+}

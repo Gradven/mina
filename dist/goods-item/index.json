@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "wxc-price": "../price/index"
+  }
+}

@@ -1,0 +1,27 @@
+.logistics-box{
+  padding:30rpx;
+}
+.title{
+  font-size: 30rpx;
+  line-height: 60rpx;
+}
+.title .label{
+  margin-right:30rpx;
+  color:#999;
+}
+
+.list{
+  clear:both;
+  font-size:30rpx;
+  margin-top:50rpx;
+  margin-left:50rpx;
+  padding-left:50rpx;
+  line-height:45rpx;
+  border-left:1px solid #eee;
+}
+.list .item{
+  margin-bottom:30rpx;
+}
+.list .time{
+  color:#999;
+}

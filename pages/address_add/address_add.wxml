@@ -1,0 +1,46 @@
+<!--pages/address_add/address_add.wxml-->
+<view class='container'>
+  <form bindsubmit='save'>
+    <view class='panel'>
+      <view class='row'>
+        <text class='title'>收货人</text>
+        <input class='content' placeholder='请输入收货人真实姓名' maxlength="24" value="{{name}}" name="name"></input>
+      </view>
+      <view class='divider'></view>
+      <view class='row relative'>
+        <text class='title'>手机号</text>
+        <input class='content' placeholder='请输入收货人手机号' maxlength="11" type="number" value="{{mobileNumber}}" bindinput="onInputMobile" name="mobile"></input>
+        <text class='phone_tip' hidden="{{!mobileTip}}">请输入正确的手机号码</text>
+      </view>
+      <view class='divider'></view>
+      <view class='row'>
+        <text class='title'>收货时间</text>
+        <picker class='content'  bindchange="bindAcceptChange" value="{{acceptIndex}}" range="{{accepts}}">
+          <text>{{accept}}</text>
+        </picker>
+        <i-icon type="enter" size="40" color="#bcc0c3" />
+      </view>
+    </view>
+
+    <view class='panel'>
+      <view class='row'>
+        <text class='title'>所在地区</text>
+        <picker class='content' mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+          <text>{{regionStr}}</text>
+        </picker>
+        <i-icon type="enter" size="40" color="#bcc0c3" />
+      </view>
+      <view class='divider'></view>
+      <view class='row'>
+        <text class='title'>详细地址</text>
+        <input class='content' placeholder='请输入详细收货地址' value="{{detail}}" name="detail" style='width:470rpx'></input>
+      </view>
+    </view>
+
+    <button class='btn_save' form-type='submit'>保存</button>
+
+  </form>
+</view>
+
+<wxc-toast is-show="{{xToast.show}}" icon="{{xToast.icon}}" text="{{xToast.title}}" icon-color="#fe5a5d"></wxc-toast>
+<wxc-loading is-show="{{isLoading}}" type="mall"></wxc-loading>

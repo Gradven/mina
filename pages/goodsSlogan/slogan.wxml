@@ -1,0 +1,25 @@
+<!--pages/goodsSlogan/slogan.wxml-->
+<view class='container' wx:if="{{goodsInfo}}">
+  <form bindsubmit='save'>
+    <view class='slogan_container'>
+      <text class='title'>推荐语：</text>
+      <textarea class='input' type='text' placeholder='输入推荐语，可以带来更多的销售哟' maxlength="100" value="{{slogan}}" name="slogan" bindinput='onSloganInput'> </textarea>
+      <text class='text_count'>{{textCount}}/100</text>
+    </view>
+    <view class='goods'>
+      <image class='img' mode='aspectFill' src="{{goodsInfo.cover}}"></image>
+      <view class='intro'>
+        <text class='name line_two'>{{goodsInfo.name}}</text>
+        <view class='space_holder'> </view>
+        <wxc-price value="{{goodsInfo.retailPrice}}" class='price' icon="sub" decimal="2"></wxc-price>
+        <text class='profit'>赚￥{{goodsInfo.profit}}</text>
+      </view>
+    </view>
+
+     <button class='btn_save' form-type='submit'>保存</button>
+  </form>
+ 
+</view>
+
+<wxc-toast is-show="{{xToast.show}}" icon="{{xToast.icon}}" text="{{xToast.title}}" icon-color="#fe5a5d"></wxc-toast>
+<wxc-loading is-show="{{isLoading}}" type="mall"></wxc-loading>

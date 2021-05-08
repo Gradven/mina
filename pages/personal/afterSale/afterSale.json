@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "售后",
+  "usingComponents": {
+    "i-icon": "../../../dist/icon/index",
+    "wxc-abnor": "../../../dist/wxc-abnor/index",
+    "wxc-price": "../../../dist/price/index",
+    "wxc-loading": "../../../dist/wxc-loading/index"
+  }
+}

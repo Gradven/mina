@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "订单确认",
+  "usingComponents": {
+    "wxc-icon": "../../dist/wxc-icon/index",
+    "wxc-loadmore": "../../dist/wxc-loadmore/index",
+    "wxc-popup": "../../dist/wxc-popup/index",
+    "wxc-loading": "../../dist/wxc-loading/index",
+    "i-icon": "../../dist/icon/index",
+    "wxc-toast": "../../dist/wxc-toast/index"
+  }
+}

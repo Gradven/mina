@@ -1,0 +1,35 @@
+<!--pages/shop/shop.wxml-->
+<view class='container header_float'>
+  <view class='top_action' bindtap='searchShop'>
+    <wxc-search class="search_box" show-icon="{{true}}" mode="static" radius="50" align="center"
+     btn-color="#f62b12" placeholder="搜索店铺"></wxc-search>
+  </view>
+  <view class='other_shop' wx:if="{{hasShop}}">
+    <text>点击按钮回到自己店铺</text>
+    <text class='back_btn' bindtap='backToMyShop'>回自己店铺</text>
+  </view>
+  <view class='content_container' wx:if="{{lastShopList.length > 0}}" style="margin-top:{{'fixed'==topActionPosition?106:0}}rpx">
+    <view class="scroll-view-wrap" style="margin-left: {{marginLeft}}rpx">
+      <view class='title'>最近访问过的店铺</view>
+      <scroll-view scroll-x class="scroll-view-catalog" scroll-with-animation="true" scroll-left="{{scrollLeft}}">
+        <view wx:key="{{index}}" class="catalog-item" wx:for="{{lastShopList}}" bindtap="intoShop" data-id="{{item.id}}">
+          <image class="catalog-item-img" src="{{item.logo}}"></image>
+          <text>{{item.name}}</text>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <view class='recommend-box' wx:if="{{recommendList.length>0}}">
+    <view class='title'>推荐店铺</view>
+    <view class='item' wx:key='index' wx:for="{{recommendList}}"
+      bindtap="intoShop" data-id="{{item.id}}">
+      <image src='{{item.logo}}'></image>
+      <text>{{item.name}}</text>
+    </view>
+  </view>
+</view>
+
+<wxc-loading is-show="{{isLoading}}" type="mall"></wxc-loading>
+
+<i-toast id="toast" />
+<wxc-loading is-show="{{isLoading}}" type="mall"></wxc-loading>

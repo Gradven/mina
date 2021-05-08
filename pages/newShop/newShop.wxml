@@ -1,0 +1,30 @@
+<!--pages/newShop/newShop.wxml-->
+<view class='content-box'>
+  <view class='title'>
+    Hi~ 请填写申请信息
+  </view>
+  <view class='row'>
+    <text>手机号</text>
+    <input type='text' name='mobile' placeholder="请输入手机号码" maxlength="11"
+    bindinput='setMobile' />
+  </view>
+  <view class='row'>
+    <text>邀请码</text>
+    <input type='text' name='invitationCode' placeholder="请输入邀请码" maxlength="10"
+    bindinput='setInvitationCode' />
+  </view>
+  <view class='row'>
+    <text>验证码</text>
+    <input type='text' name='code' placeholder="请输入短信验证码" maxlength="6"
+    bindinput='setCode' />
+    <text class='getCode  {{count<60?"gray":""}}' bindtap='getCode'>{{count==60?'获取验证码':count+'s后再次获取'}}</text>
+  </view>
+  <view class='btn-box'>
+  <checkbox-group class="checkbox-group" bindchange="checkboxChange">
+    <checkbox value="1" checked="true"/>同意<text catchtap='agreement'>《用户协议》</text>
+  </checkbox-group>
+    <view class='btn {{mobile && code?"":"gray"}}' loading="{{loading}}" bindtap="autoAddShop">
+    提交申请
+    </view>
+  </view>
+</view>

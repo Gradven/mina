@@ -1,0 +1,22 @@
+<view class='container'>
+  <view class='toolbar'>
+    <view class='item' bindtap='orderBy' data-ordertype='retail_price' >
+      <view class='{{orderBy=="retail_price"?"sort "+direction:"sort"}}'>价格</view>
+    </view>
+    <view class='item' bindtap='orderBy' data-ordertype='profit'>
+      <view class='{{orderBy=="profit"?"sort "+direction:"sort"}}'>利润</view>
+    </view>
+    <view class='item' bindtap='showFilter'>
+      <view class='filter'>筛选</view>
+    </view>
+  </view>
+  <view class='list' wx:if="{{userInfo.id}}">
+    <goods-item item="{{item}}" shopInfo="{{shopInfo}}" wx:if="{{userInfo.shopId}}" 
+      wx:for="{{categoryGoodsList}}" wx:key="{{item.id}}"
+      bindtapitem='tapitem'></goods-item>
+    <view class='more'>{{hasMore?'正在拼命加载中...':'已加载全部'}}</view>
+  </view>
+  <i-modal title="温馨提示" visible="{{ showModel }}" actions="{{ modelBtnList }}" bind:click="handleModelClick">
+    <view>请先交纳技术服务年费</view>
+  </i-modal>
+</view>

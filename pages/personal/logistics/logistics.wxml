@@ -1,0 +1,14 @@
+<view class='logistics-box' wx:if="{{!isLoading && couriersInfo.nu}}">
+  <view class="title">
+    <text class='label'>订单编号:</text>
+    <text class='no'>{{couriersInfo.nu}}</text>
+  </view>
+  <view class="list">
+    <view class="item" wx:key="index" wx:for="{{couriersInfo.data}}">
+      <view class="desc">{{item.context}}</view>
+      <view class="time">{{item.time}}</view>
+    </view>
+  </view>
+</view>
+
+<wxc-loading is-show="{{isLoading}}" type="mall"></wxc-loading>

@@ -1,0 +1,30 @@
+<wxc-abnor type="ORDER" title="暂无待收货订单" wx:if="{{!isLoading && goodsList.length <= 0}}"></wxc-abnor>
+<view class='received-box' wx:if="{{goodsList.length > 0}}">
+  <view class='order-item' wx:for="{{goodsList}}" wx:key="{{index}}"
+   data-sn="{{item.orderSn}}" bindtap="orderDetail">
+    <view class='order-no'>
+      <view class='gray'>订单编号：</view>{{item.orderSn}}
+      <text>{{item.shippingStatus==0?'待发货':'待收货'}}</text>
+    </view>
+    <view class='content-box'>
+      <image src="{{item.picUrl}}" ></image>
+      <view class='content'>
+        <view class='name'><text decode>{{item.goodsName}}</text></view>
+        <view class='spec'>{{item.goodsSpecificationNameValue}}</view>
+        <view class='holder'> </view>
+        <view class='price'>
+          <wxc-price value="{{item.retailPrice}}" icon="sub"></wxc-price>
+          <text class='goodsNumber'>x{{item.goodsNumber}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='btn-bar' wx:if="{{item.shippingStatus==1 || item.shippingStatus==2}}">
+      <view class='btn' data-id="{{item.id}}" catchtap="received"
+       wx:if="{{item.shippingStatus==1}}"> 确认收货</view>
+      <view class='btn-border' data-id="{{item.id}}" catchtap="showLogistics"> 查看物流</view>
+    </view>
+  </view>
+  <view class='more'>{{hasMore?'正在拼命加载中...':'已加载全部'}}</view>
+</view>
+
+<wxc-loading is-show="{{isLoading}}" type="mall"></wxc-loading>

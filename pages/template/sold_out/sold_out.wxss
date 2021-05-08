@@ -1,0 +1,36 @@
+.sold_out {
+  width: 190rpx;
+  height: 190rpx;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 95rpx;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  color: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sold_out .sold_title {
+  font-size: 29rpx;
+  font-weight: bold;
+  color: white;
+}
+
+.sold_out .sold_divider {
+  width: 100rpx;
+  height:4rpx;
+  margin-top: 8rpx;
+  margin-bottom: 8rpx;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.sold_out .sold_subtitle {
+  font-size: 22rpx;
+  font-weight: bold;
+  font-family: sans-serif
+}

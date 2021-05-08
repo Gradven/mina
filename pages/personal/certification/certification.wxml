@@ -1,0 +1,44 @@
+<view class='container'>
+  <view class='notice'>
+    <i-icon type="prompt_fill" size='40' />
+    根据监管要求，首次提现前需完成实名认证。
+  </view>
+  <view class='idcard-box'>
+    <view class='title'>请分别上传身份证正面和背面照片</view>
+    <view class='upload'>
+      <view class='img' data-type='cardFront' bindtap='uploadIcon'>
+        <image src="{{cardFront}}" wx:if="{{cardFront}}"></image>
+        <image src="https://hq-prod.oss-cn-hangzhou.aliyuncs.com/icon/sfz_1.png" wx:if="{{!cardFront}}"></image>
+        <view class='desc'>上传身份证正面</view>
+      </view>
+      <view class='img' data-type='cardBack' bindtap='uploadIcon'>
+        <image src="{{cardBack}}" wx:if="{{cardBack}}"></image>
+        <image src="https://hq-prod.oss-cn-hangzhou.aliyuncs.com/icon/sfz_2.png" 
+        wx:if="{{!cardBack}}"></image>
+        <view class='desc'>上传身份证背面</view>
+      </view>
+    </view>
+    <view class='row border-bottom'>
+        <view class='label'>姓名</view>
+        <input type='text' placeholder='请输入您的真实姓名' bindinput='setName'></input>
+      </view>
+      <view class='row border-bottom'>
+        <view class='label'>身份证号</view>
+        <input type='text' placeholder='请输入18位有效身份证号' maxlength='18' bindinput='setIdCard'></input>
+      </view>
+    <view class='btn' bindtap='submit'>
+      提交
+    </view>
+  </view>
+  <view class='desc-box'>
+    <view catchtap='showDesc'>查看身份证证件要求</view>
+  </view>
+</view>
+<view class='dialog-pop' wx:if="{{isShowTips}}">
+  <view class='dialog-box'>
+    <view class='title'>拍摄示意</view>
+    <image src='https://hq-prod.oss-cn-hangzhou.aliyuncs.com/icon/psts.png'></image>
+    <view class='desc'>为了提高拍摄识别率，请横向拍摄</view>
+    <view class='btn' catchtap='closeDialog'>知道了</view>
+  </view>
+</view>

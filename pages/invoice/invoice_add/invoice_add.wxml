@@ -1,0 +1,69 @@
+<view class='container'>
+  <form bindsubmit='save'>
+    <view class='panel'>
+
+      <view class='row'>
+        <text class='title'>抬头类型</text>
+        <picker class='content' bindchange="onTitleTypeChange" value="{{titleTypesIndex}}" range="{{titleTypes}}">
+          <text>{{titleType}}</text>
+        </picker>
+        <i-icon type="enter" size="40" color="#bcc0c3" />
+      </view>
+      <view class='divider'></view>
+      <view class='row'>
+        <text class='title'>发票类型</text>
+        <picker class='content' bindchange="onInvoiceTypeChange" value="{{invoiceTypesIndex}}" range="{{invoiceTypes}}" disabled="{{titleTypesIndex==0}}">
+          <text>{{invoiceType}}</text>
+        </picker>
+        <i-icon type="enter" size="40" color="#bcc0c3" wx:if="{{titleTypesIndex!=0}}"/>
+      </view>
+
+      <view class='divider'></view>
+      <view class='row'>
+        <text class='title'>发票抬头</text>
+        <input class='content' placeholder='请输入抬头' maxlength="120" type="text" value="{{title}}" name="title"></input>
+      </view>
+    </view>
+
+
+    <view class='panel hideInRightSide'  animation="{{invoiceDetailAni}}" wx:if="{{showMore}}">
+      <view class='row'>
+        <text class='title'>税号</text>
+        <input class='content' placeholder='请输入税号' maxlength="50" type="text" value="{{taxNo}}" name="taxNo"></input>
+      </view>
+
+      <view class='divider'></view>
+      <view class='row'>
+        <text class='title'>开户银行</text>
+        <input class='content' placeholder='请输入开户银行' maxlength="100" type="text" value="{{bankName}}" name="bankName"></input>
+      </view>
+
+      <view class='divider'></view>
+      <view class='row'>
+        <text class='title'>银行帐号</text>
+        <input class='content' placeholder='请输入银行帐号' maxlength="50" type="number" value="{{bankNo}}" name="bankNo"></input>
+      </view>
+
+      <view class='divider'></view>
+      <view class='row'>
+        <text class='title'>企业地址</text>
+        <input class='content' placeholder='请输入企业地址' type="text" value="{{address}}" name="address"></input>
+      </view>
+
+      <view class='divider'></view>
+      <view class='row'>
+        <text class='title'>企业电话</text>
+        <input class='content' placeholder='请输入企业电话' maxlength="20" type="text" value="{{telephone}}" name="telephone"></input>
+      </view>
+    </view>
+
+
+
+
+    <button class='btn_save' form-type='submit' animation="{{saveBtnAni}}">保存</button>
+
+  </form>
+</view>
+
+<wxc-toast is-show="{{xToast.show}}" icon="{{xToast.icon}}" text="{{xToast.title}}" icon-color="#fe5a5d"></wxc-toast>
+<wxc-loading is-show="{{isLoading}}" type="mall"></wxc-loading>

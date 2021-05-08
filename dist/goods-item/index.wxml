@@ -1,0 +1,41 @@
+<view class='goods-item'
+  bindtap='toGoodsDetailPage' data-id="{{item.id}}">
+  <view class='goods_item_container'>
+  <view class='img_container'>
+    <image src='{{item.cover}}'></image>
+    <block wx:if="{{item.onSaleFlag == 0 || item.storeNumber == 0}}">
+      <import src="../../pages/template/sold_out/sold_out.wxml" />
+      <template is="soldOut" data="{{title:item.onSaleFlag == 0?'已下架':item.storeNumber == 0?'已售完':''}}"/>
+    </block>
+  </view>
+  <view class='content'>
+    <view class='name'>
+      <text decode>{{item.name}}</text>
+      <text wx:if="{{item.onSaleFlag==0}}">（已下架）</text>
+    </view>
+    <view class='desc'>
+      <text decode>{{item.shortDescription}}</text>
+    </view>
+    <view class='holder'></view>
+    <view class='price'>
+      <wxc-price value="{{item.retailPrice}}" class='retail' icon="sub" decimal="2"></wxc-price>
+      <view class='profitContainer'>赚<wxc-price value="{{item.profit}}" class='profit' icon="sub" decimal="2" wx:if="{{shopInfo.payFeeFlag==1}}"></wxc-price><text wx:else>xxxx</text></view>
+    </view>
+  </view>
+  </view>
+  <view class='divider'></view>
+  <view class='btn-bar'>
+    <view class='btn' wx:if="{{item.agentFlag==-1 && item.onSaleFlag==1}}" 
+      data-id="{{item.id}}" data-recommend='{{item.recommend}}' catchtap='reOnSelf'>
+      再次代理
+    </view>
+    <view class='btn' wx:if="{{(!item.agentFlag || item.agentFlag==0) && item.onSaleFlag==1}}" 
+      data-id="{{item.id}}" data-recommend='{{item.recommend}}' catchtap='onSelf'>
+      代理
+    </view>
+    <view class='btn unBtn' wx:if="{{item.agentFlag==1 && item.onSaleFlag==1}}" 
+      data-id="{{item.id}}" catchtap='unSelf'>
+      取消代理
+    </view>
+  </view>
+</view>

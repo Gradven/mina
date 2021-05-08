@@ -1,0 +1,31 @@
+<view wx:if="{{!isLoading}}">
+  <view class='order-count-box'>
+    <view class='title'>
+      <i-icon class='redpacket' size='40' color="#fff" type="financial_fill" />
+      实际销售（元）
+    </view>
+    <view class='balance'>
+      <wxc-price value="{{count}}" icon="sub" wx:if="{{count}}"></wxc-price>
+    </view>
+  </view>
+  <view class='goods-list' wx:if="{{orderGoodsList.length > 0}}">
+    <view class='item' wx:key="{{index}}" wx:for="{{orderGoodsList}}">
+      <view class='order-no'>
+        订单编号：{{item.sn}}
+        <text>{{item.orderSn}}</text>
+      </view>
+      <image src="{{item.picUrl}}"></image>
+      <view class='content'>
+        <view class='name'><text decode>{{item.goodsName}}</text></view>
+        <view class='spec'>{{item.goodsSpecificationNameValue}}</view>
+        <view class='price'>
+          <wxc-price value="{{item.retailPrice}}" icon="sub" wx:if="{{item.retailPrice}}"></wxc-price>
+          <text>x {{item.goodsNumber}}</text>
+        </view>
+      </view>
+      <view class='amountRetail'>商品总价：<wxc-price value="{{item.amountRetail}}" icon="sub" wx:if="{{item.amountRetail}}"></wxc-price></view>
+    </view>
+    <view class='more' wx:if="{{orderGoodsList.length > 0}}">{{hasMore?'正在拼命加载中...':'已加载全部'}}</view>
+  </view>
+</view>
+<wxc-loading is-show="{{isLoading}}" type="mall"></wxc-loading>

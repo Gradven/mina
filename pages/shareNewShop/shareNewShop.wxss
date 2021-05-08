@@ -1,0 +1,4 @@
+.share{
+  margin:100rpx auto 0;
+  width: 600rpx;
+}

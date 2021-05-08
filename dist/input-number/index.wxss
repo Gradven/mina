@@ -1,0 +1,42 @@
+.i-input-number {
+  color: #495060;
+}
+
+.i-input-number view {
+  display: inline-block;
+  line-height: 50rpx;
+  text-align: center;
+  min-width: 60rpx;
+  vertical-align: middle;
+  font-size: 30rpx;
+  border: 1rpx solid #dddee1;
+}
+
+.i-input-number-minus {
+  border-right: none;
+  border-radius: 50rpx 0 0 50rpx;
+}
+
+.i-input-number-plus {
+  border-left: none;
+  border-radius: 0 50rpx 50rpx 0;
+}
+
+.i-input-number-text {
+  border-top: 1rpx solid #dddee1;
+  border-bottom: 1rpx solid #dddee1;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  height: 50rpx;
+  width: 60rpx;
+  min-height: auto;
+  font-size: 24rpx;
+  line-height: 50rpx;
+}
+
+.i-input-number-disabled {
+  border-color: #dddee1;
+  color: #bbbec4;
+  background: #f7f7f7;
+}

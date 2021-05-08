@@ -1,0 +1,15 @@
+{
+  "navigationBarTitleText": "购物车",
+  "usingComponents": {
+    "wxc-icon": "../../dist/wxc-icon/index",
+    "i-toast": "../../dist/toast/index",
+    "i-icon": "../../dist/icon/index",
+    "wxc-price": "../../dist/price/index",
+    "wxc-loadmore": "../../dist/wxc-loadmore/index",
+    "wxc-popup": "../../dist/wxc-popup/index",
+    "i-input-number": "../../dist/input-number/index",
+    "i-checkbox": "../../dist/checkbox/index",
+    "wxc-loading": "../../dist/wxc-loading/index",
+    "wxc-toast": "../../dist/wxc-toast/index"
+  }
+}

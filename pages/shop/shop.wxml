@@ -1,0 +1,113 @@
+<!--pages/shop/shop.wxml-->
+<view class='container'>
+  <view class='shop_top_action' animation="{{topActionAni}}">
+    <wxc-search class="search_box" show-icon="{{true}}" mode="static" radius="50" align="center" placeholder="搜索店铺内商品" bindtap="toSearchPage"></wxc-search>
+  </view>
+  <view class='content_container' hidden="{{shopInfo == null}}">
+    <view class='intro'>
+      <view class='mask' style="background-image: url('{{shopInfo.backgroundUrl}}');">
+        <view class='tip_holder'>
+          <i-icon i-class='editerBg' type="editor" size='50' color='#fff' bindtap='uploadBg' wx:if="{{isInMyShop}}" />
+          <view class='other_shop' wx:if="{{!isInMyShop&&hasShop}}">
+            <text>您正在浏览 {{shopInfo.name}}</text>
+            <text class='back_btn' bindtap='backToMyShop'>回自己店铺</text>
+          </view>
+          <view class='shop_share' data-share_type="shop" bindtap='handleShareEvent'>
+            <text class='text'>分享</text>
+          </view>
+        </view>
+      </view>
+      <view class='content'>
+        <image class='logo' mode='aspectFill' src="{{shopInfo.logo}}" wx:if="{{shopInfo!=null}}"></image>
+        <view class='name'>
+          <text class='text'>{{shopInfo.name}}</text>
+          <i-icon wx:if="{{isInMyShop}}" type="editor" size="42" color="#80848f" bindtap='editShopInfo' />
+        </view>
+        <text class='shop_des'>{{shopInfo.description}}</text>
+        <view class='divider'></view>
+        <view class='visit'>有<text class='visit_count'>{{visitorsCount}}</text>位客人访问了店铺</view>
+        <view class='visitors' bindtap='toVisitHistoryPage'>
+          <image class='img' wx:for="{{visitors}}" wx:key="{{item.id}}" src="{{item.avatar}}" mode='aspectFill'></image>
+        </view>
+      </view>
+    </view>
+
+
+    <!-- <view class='tab_container'>
+      <view class='tab'>
+        <text class="{{currentTab =='new'?'selected':'normal'}}" data-current='new' bindtap='handleTabChange'>新品上架</text>
+        <text class="{{currentTab =='sort'?'selected':'normal'}}" data-current='sort' bindtap='handleTabChange'>商品分类</text>
+        <view class="{{currentTab =='price'?'selected':'normal'}}" data-current='price' bindtap='handleTabChange'>
+          <view class='price'>
+            <text class='title'>价格排序</text>
+            <view class='price_sort'>
+              <view class="down {{ ascDesc==1?'down_active':''}} "></view>
+              <view class="up {{ ascDesc!=1?'up_active':''}} "></view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='indicator_container'>
+        <view class='indicator' animation="{{tabIndicatorAnimation}}"></view>
+      </view>
+    </view> -->
+
+    <block wx:if="{{goods.newArrival && goods.newArrival.length>0}}">
+      <import src="../template/template.wxml" />
+      <template is="homeList" data="{{current:goods.current,isInMyShop:isInMyShop}}" />
+    </block>
+    <block wx:elif="{{goods.newArrival && isInMyShop}}">
+      <wxc-abnor type="FOOTPRINT" title="您还没有代理任何商品" button="去选货市场看看" bind:abnortap="onGoToMarketTap"></wxc-abnor>
+    </block>
+    <block wx:elif="{{goods.newArrival}}">
+      <wxc-abnor type="FOOTPRINT" title="TA还没有代理任何商品"></wxc-abnor>
+    </block>
+    <!-- <import src="../template/template.wxml" />
+    <template is="goodsList" data="{{...goods}}" /> -->
+
+    <view class="weui-loadmore">
+      <view class="weui-loading" hidden="{{isHideLoadMore || goods.currentLoaded}}"></view>
+      <view class="weui-loadmore__tips" hidden="{{isHideLoadMore}}"> {{goods.currentLoaded?"所有商品加载完成":"正在加载"}} </view>
+    </view>
+
+  </view>
+</view>
+
+<view class='editShopInfo-pop' wx:if="{{isEditShopInfo}}">
+  <view class='editShopInfo-box'>
+    <i-icon type="close" class='close' size='40' color='#1c2438' bindtap='closeEditShopInfo' />
+    <view class='title'>店铺信息</view>
+    <view class='row'>
+      <view class='label'>店铺logo</view>
+      <view class='add' bindtap='uploadLogo'>
+        <image class='image' src="{{imgUrl}}" wx:if="{{imgUrl}}"></image>
+        <i-icon type="add" class='add-icon' wx:if="{{!imgUrl}}" />
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label'>店铺名称</view>
+      <input type='text' value="{{shopInfo.name}}" bindinput="bindShopNameInput" maxlength="10" placeholder="请输入店铺名称"></input>
+      <view class='count'>{{shopInfoNameCount}}/10</view>
+    </view>
+    <view class='row'>
+      <view class='label'>店铺简介</view>
+      <input type='text' value="{{shopInfo.description}}" bindinput="bindShopDescInput" maxlength="20" placeholder="请输入店铺名称"></input>
+      <view class='count'>{{shopInfoDescCount}}/20</view>
+    </view>
+    <view class='btn' bindtap='saveShopInfo'>保存</view>
+  </view>
+</view>
+
+<view class='floating' animation="{{rightFloatAni}}">
+  <view class='return_top' bindtap='quickReturnTop'>
+  </view>
+  <view class='my_visit' bindtap='toMyVisitPage'>
+  </view>
+</view>
+
+
+<x-share wx:if="{{showShare}}" show="{{showShare}}" shareData="{{shareData}}" bind:onCloseSharePopup="onCloseSharePopup"> </x-share>
+
+<wxc-loading is-show="{{isLoading}}" type="mall"></wxc-loading>
+<wxc-toast is-show="{{xToast.show}}" icon="{{xToast.icon}}" text="{{xToast.title}}" icon-color="#fe5a5d"></wxc-toast>
+<i-toast id="toast" />

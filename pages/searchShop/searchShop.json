@@ -1,0 +1,18 @@
+{
+  "navigationStyle": "default",
+  "navigationBarTitleText": "",
+  "navigationBarTextStyle": "black",
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "i-tabs": "../../dist/tabs/index",
+    "i-tab": "../../dist/tab/index",
+    "i-toast": "../../dist/toast/index",
+    "i-icon": "../../dist/icon/index",
+    "wxc-icon": "../../dist/wxc-icon/index",
+    "wxc-search": "../../dist/search/index",
+    "wxc-price": "../../dist/price/index",
+    "wxc-loading": "../../dist/wxc-loading/index",
+    "wxc-abnor": "../../dist/wxc-abnor/index"
+  }
+}

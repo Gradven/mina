@@ -1,0 +1,39 @@
+<view>
+  <view class='notice' wx:if="{{shopInfo.payFeeFlag != 1}}">
+    <i-icon type="prompt_fill" size='40' />
+    只有缴纳技术服务年费，才能在“选货市场”代理商品哦~
+  </view>
+  <view class='asset-box'>
+    <view class='title'>
+      <i-icon class='redpacket' size='40' color="#fff" type="time" />
+      技术服务年费到期时间
+    </view>
+    <view class='expire'>
+      {{expireTime}}
+    </view>
+    <view class='btn' bindtap='pay' wx:if="{{shopInfo.payFeeFlag != 1}}">我要缴费</view>
+    <view class='btn btn_gray' wx:if="{{shopInfo.payFeeFlag == 1}}">我要缴费</view>
+  </view>
+  <view class='profit-list'>
+    <view class='item' wx:key="{{index}}" wx:for="{{orderShopServiceList}}">
+      <view class='row'>
+        订单号：{{item.sn}}
+      </view>
+      <view class='row'>
+        支付类型：微信支付
+      </view>
+      <view class='row'>
+        支付状态：{{item.status==1?"已支付":item.status==99?"已取消":"未支付"}}
+      </view>
+      <view class='row'>
+        支付金额：<wxc-price value="{{item.fee}}" icon="sub" wx:if="{{item.fee}}"></wxc-price>
+      </view>
+      <view class='row'>
+        缴费时间：{{item.createTime}}
+      </view>
+    </view>
+    <view class='more' wx:if="{{orderShopServiceList.length > 0}}">{{hasMore?'正在拼命加载中...':'已加载全部'}}</view>
+    <view class='more' wx:if="{{noDate}}">暂无记录</view>
+  </view>
+</view>
+<wxc-loading is-show="{{isLoading}}" type="mall"></wxc-loading>

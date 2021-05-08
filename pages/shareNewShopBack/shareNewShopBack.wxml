@@ -1,0 +1,4 @@
+<view class='content-box'>
+  <image class='shop_open_bg' src='https://hq-prod.oss-cn-hangzhou.aliyuncs.com/logo/wykd_bg.png' mode='aspectFill'> </image>
+  <view class='btn' bindtap='toNewShop'>我要开店</view>
+</view>

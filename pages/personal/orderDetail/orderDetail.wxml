@@ -1,0 +1,42 @@
+<view class='order-detail-box' wx:if="{{!isLoading}}">
+  <view class='address-box'>
+    <view class='title'>收货地址</view>
+    <view class='name'>
+      {{orderInfo.consignee}}
+      <text>{{orderInfo.mobile}}</text>
+    </view>
+    <view class='address'>
+      {{orderInfo.country}} {{orderInfo.province}} {{orderInfo.city}} {{orderInfo.district}} {{orderInfo.address}}
+    </view>
+  </view>
+  <view class='goods-box'>
+    <view class='title'>商品信息</view>
+    <view class='goods' wx:key="index" wx:for="{{orderGoods}}" >
+      <image src="{{item.picUrl}}"></image>
+      <view class='content'>
+        <view class='name'><text decode>{{item.goodsName}}</text></view>
+        <view class='type'>{{item.goodsSpecificationNameValue}}</view>
+        <view class='price'>
+          <wxc-price value="{{item.retailPrice}}" icon="sub"></wxc-price>
+          <text>x {{item.goodsNumber}}</text>
+        </view>
+      </view>
+      <view class='btn-border' data-id="{{item.id}}" bindtap="showLogistics" wx:if="{{item.shippingStatus==1 || item.shippingStatus==2}}"> 查看物流</view>
+      <view class='btn-apply' data-id="{{item.id}}" bindtap="applyService" wx:if="{{!item.supplierServiceId && orderInfo.status == 2}}"> 申请售后</view>
+      <view class='btn-apply' data-id="{{item.supplierServiceId}}" bindtap="serviceDetail" wx:if="{{item.supplierServiceId && orderInfo.status == 2}}"> 售后详情</view>
+    </view>
+    <view class='price'>
+      {{orderInfo.payStatus == 0?'还需支付':'订单总价'}}
+      <wxc-price value="{{orderInfo.amount}}" icon="sub" class="txt"></wxc-price>
+    </view>
+  </view>
+  <view class='sn-box'>
+    <view>订单编号：{{orderInfo.sn}}</view>
+    <view>下单时间：{{orderInfo.createTime}}</view>
+  </view>
+  <view class='btn-bar' wx:if="{{orderInfo.payStatus == 0 && orderInfo.expiredSecond>0}}">
+    <view class='pay-btn' bindtap='toPay'> 支付 {{orderInfo.expiredTime}} </view>
+  </view>
+</view>
+
+<wxc-loading is-show="{{isLoading}}" type="mall"></wxc-loading>

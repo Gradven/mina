@@ -1,0 +1,22 @@
+<view class='container'>
+  <view class='top_action'>
+    <wxc-search class="search_box" show-icon="{{true}}" button="搜索" btn-color="#f62b12" placeholder="搜索商品" bind:submit="onConfirm" bind:confirm="onConfirm" bindinput="inputSearch" bind:onSearchClear="onSearchClear"></wxc-search>
+  </view>
+  <wxc-abnor type="SEARCH"  wx:if="{{empty}}"></wxc-abnor>
+  <view class='list' wx:if="{{userInfo.id && goodsInfoAll.length>0}}">
+    <view class='tip_holder' wx:if="{{false}}">
+      <view class='other_shop'>
+        <text>您正在浏览他人店铺，点击按钮回到自己店铺。</text>
+        <text class='back_btn' bindtap='backToMyShop'>回自己店铺</text>
+      </view>
+    </view>
+    <goods-item item="{{item}}" shopInfo="{{shopInfo}}" wx:if="{{userInfo.shopId}}" 
+      wx:for="{{goodsInfoAll}}" wx:key="{{item.id}}"
+      bindtapitem='tapitem'></goods-item>
+    <view class='more'>{{hasMore?'正在拼命加载中...':'已加载全部'}}</view>
+  </view>
+  <i-modal title="温馨提示" visible="{{ showModel }}" actions="{{ modelBtnList }}" bind:click="handleModelClick">
+    <view>请先交纳技术服务年费</view>
+  </i-modal>
+</view>
+<wxc-loading is-show="{{isLoading}}" type="mall"></wxc-loading>

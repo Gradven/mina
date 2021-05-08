@@ -1,0 +1,110 @@
+
+page {
+  display: block;
+  min-height: 100%;
+  background-color: whitesmoke;
+}
+
+.toolbar{
+  display: flex;
+  align-items: center;
+  padding: 30rpx 0rpx;
+  background-color: white;
+  font-size: 32rpx;
+  font-weight: bold;
+  color:#1c2438;
+}
+.toolbar .item{
+  flex-grow: 1;
+  text-align: center;
+}
+.toolbar .item .sort{
+  display: inline-block;
+  padding-right:30rpx;
+  background: url('https://xiaomaimai-test.oss-cn-hangzhou.aliyuncs.com/icon/sort.png') right center no-repeat;
+  background-size: auto 30rpx;
+}
+
+.toolbar .item .sort.asc{
+  background: url('https://xiaomaimai-test.oss-cn-hangzhou.aliyuncs.com/icon/sort_asc.png') right center no-repeat;
+  background-size: auto 30rpx;
+}
+
+.toolbar .item .sort.desc{
+  background: url('https://xiaomaimai-test.oss-cn-hangzhou.aliyuncs.com/icon/sort_desc.png') right center no-repeat;
+  background-size: auto 30rpx;
+}
+
+.toolbar .item .filter{
+  display: inline-block;
+  padding-right:30rpx;
+  background: url('https://xiaomaimai-test.oss-cn-hangzhou.aliyuncs.com/icon/filter.png') right center no-repeat;
+  background-size: auto 30rpx;
+}
+
+.list{
+  margin-top:0rpx;
+}
+.list .item{
+  background-color: white;
+  padding:30rpx;
+  height:300rpx;
+  box-sizing:border-box;
+  border-bottom: 1px solid #999;
+}
+.list .item image{
+  float:left;
+  width:240rpx;
+  height:240rpx;
+}
+.list .item .content{
+  float:left;
+  margin-left:50rpx;
+  width:400rpx;
+  height:240rpx;
+}
+.list .item .content .name{
+  font-size:24rpx;
+  height: 80rpx;
+  margin-bottom:30rpx;
+  line-height: 38rpx;
+  color:#c4c4c4;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: pre-wrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.list .item .content .price{
+  font-size:24rpx;
+  padding-left:10rpx;
+  padding-bottom:50rpx;
+}
+.list .item .content .price text{
+  margin-right:30rpx;
+}
+.btn{
+  float:right;
+  font-size:24rpx;
+  width:180rpx;
+  height:50rpx;
+  line-height: 50rpx;
+  text-align:center;
+  border-radius: 50rpx;
+  border:1px solid #666;
+}
+.btn.unBtn{
+  color:#fff;
+  background:#fd6066;
+  border:none;
+}
+.more{
+  font-size: 24rpx;
+  line-height: 72rpx;
+  text-align: center;
+  color:#999;
+}
+.red{
+  color:#f22
+}

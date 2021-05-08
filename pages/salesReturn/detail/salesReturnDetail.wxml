@@ -1,0 +1,59 @@
+<!--pages/salesReturn/detail/salesReturnDetail.wxml-->
+<view class='container footer_float' wx:if="{{orderGoodsInfo}}">
+  <view class='statusContainer'>
+    <text>{{supplierServiceInfo.serviceStatus}}</text>
+  </view>
+
+  <view class='row'>
+    <text>退款金额</text>
+    <text>￥{{orderGoodsInfo.amountRetail}}</text>
+  </view>
+
+  <view class='address_container' wx:if="{{supplierInfo}}">
+    <text class='title'>寄回地址</text>
+    <view class='consignee'>
+      <text>收件人：</text>
+      <text class="name">客退组</text>
+      <text class='tel'>{{supplierInfo.serviceTel}}</text>
+    </view>
+    <text class='detail'>{{supplierInfo.serviceAddress}}</text>
+  </view>
+
+  <view class='contract_container' wx:if="{{supplierInfo}}">
+    <text class='title'>联系方式</text>
+    <view class='contract_row'>
+      <text class='subTitle'>微信</text>
+      <text>{{supplierInfo.serviceWeixin}}</text>
+    </view>
+    <view class='contract_row'>
+      <text class='subTitle'>QQ</text>
+      <text>{{supplierInfo.serviceQq}}</text>
+    </view>
+  </view>
+
+  <view class='order_sn'>
+    <view class='title'>订单编号：</view>
+    <text class='value'>{{orderGoodsInfo.orderSn}}</text>
+  </view>
+
+  <view class='goods'>
+    <image class='img' mode='aspectFill' src="{{orderGoodsInfo.picUrl}}"></image>
+    <view class='intro'>
+      <text class='name line_two'>{{orderGoodsInfo.goodsName}}</text>
+      <view class='space_holder'> </view>
+      <text class='specs'>{{orderGoodsInfo.specsSimple}}</text>
+      <view class='priceContainer'>
+        <text class='price grow'>￥{{orderGoodsInfo.retailPrice}}</text>
+        <text class='amount'>x {{orderGoodsInfo.goodsNumber}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='action_footer' wx:if="{{supplierServiceInfo.status!=99}}">
+    <text class='cancel' bindtap='cancelSalesReturn'>取消退货</text>
+  </view>
+</view>
+
+
+
+<wxc-loading is-show="{{isLoading}}" type="mall"></wxc-loading>
+<wxc-toast is-show="{{xToast.show}}" icon="{{xToast.icon}}" text="{{xToast.title}}" icon-color="#fe5a5d"></wxc-toast>

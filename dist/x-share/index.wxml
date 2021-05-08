@@ -1,0 +1,13 @@
+<wxc-popup class="popup_share" animation-mode="bottom" align="bottom" locked="true">
+  <import src="../../pages/template/action_sheet/share.wxml" />
+  <template is="share_sheet" data="{{shareData:shareData,profit:profit,shareType:shareType}}" />
+</wxc-popup>
+
+<view wx:if="{{showTimeLine}}">
+  <import src="../../pages/template/share_view/share_home.wxml" />
+  <template is="share_view" data="{{shareData:timeLineData}}"/>  
+</view>
+
+
+<wxc-loading is-show="{{isLoading}}" type="mall"></wxc-loading>
+<wxc-toast is-show="{{xToast.show}}" icon="{{xToast.icon}}" text="{{xToast.title}}" icon-color="#fe5a5d"></wxc-toast>

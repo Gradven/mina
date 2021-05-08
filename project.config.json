@@ -1,0 +1,99 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.2.0",
+	"appid": "xxxx",
+	"projectname": "hongqu",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 9,
+			"list": [
+				{
+					"id": 0,
+					"name": "开店",
+					"pathName": "pages/shareNewShopBack/shareNewShopBack",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "分享后的店",
+					"pathName": "pages/shop/shop",
+					"query": "shopId=1"
+				},
+				{
+					"id": -1,
+					"name": "开店申请成功页",
+					"pathName": "pages/newShopSuccess/newShopSuccess",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "index",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的资产",
+					"pathName": "pages/personal/asset/asset",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "filter",
+					"pathName": "pages/filter/filter",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "market",
+					"pathName": "pages/market/market",
+					"query": ""
+				},
+				{
+					"id": 7,
+					"name": "小程序码进入商品详情",
+					"pathName": "pages/shop/shop",
+					"query": "scene=13_41_1",
+					"scene": "1012"
+				},
+				{
+					"id": 8,
+					"name": "开店",
+					"pathName": "pages/newShop/newShop",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "实名认证",
+					"pathName": "pages/personal/certification/certification",
+					"query": ""
+				}
+			]
+		}
+	}
+}

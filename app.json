@@ -1,0 +1,85 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/salesReturn/salesReturn",
+    "pages/salesReturn/detail/salesReturnDetail",
+    "pages/orderConfirm/orderConfirm",
+    "pages/address_add/address_add",
+    "pages/address/address",
+    "pages/shop/shop",
+    "pages/authorize/authorize",
+    "pages/search/search",
+    "pages/searchShop/searchShop",
+    "pages/searchGoods/searchGoods",
+    "pages/goodsDetail/goodsDetail",
+    "pages/shareNewShop/shareNewShop",
+    "pages/shareNewShopBack/shareNewShopBack",
+    "pages/newShop/newShop",
+    "pages/agreement/agreement",
+    "pages/newShopSuccess/newShopSuccess",
+    "pages/market/market",
+    "pages/category/category",
+    "pages/categorySearch/categorySearch",
+    "pages/filter/filter",
+    "pages/personal/personal",
+    "pages/personal/pendingPayment/pendingPayment",
+    "pages/personal/toBeReceived/toBeReceived",
+    "pages/personal/afterSale/afterSale",
+    "pages/personal/orderList/orderList",
+    "pages/personal/orderDetail/orderDetail",
+    "pages/personal/saleManage/saleManage",
+    "pages/personal/addressManage/addressManage",
+    "pages/personal/shopList/shopList",
+    "pages/personal/asset/asset",
+    "pages/personal/servicefee/servicefee",
+    "pages/personal/certification/certification",
+    "pages/personal/certificationDesc/certificationDesc",
+    "pages/personal/cash/cash",
+    "pages/personal/logistics/logistics",
+    "pages/personal/orderCount/orderCount",
+    "pages/personal/salesAmount/salesAmount",
+    "pages/personal/profitAmount/profitAmount",
+    "pages/guide/guide",
+    "pages/cart/cart",
+    "pages/goodsSlogan/slogan",
+    "pages/shopVisitHistory/shopVisitHistory",
+    "pages/invoice/invoice",
+    "pages/invoice/invoice_add/invoice_add"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "红橱",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#fe5a5d",
+    "list": [
+      {
+        "pagePath": "pages/shop/shop",
+        "text": "首页",
+        "iconPath": "./icon/shop.png",
+        "selectedIconPath": "./icon/shop_hover.png"
+      },
+      {
+        "pagePath": "pages/market/market",
+        "text": "店铺搜索",
+        "iconPath": "./icon/center.png",
+        "selectedIconPath": "./icon/center_hover.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "./icon/cart.png",
+        "selectedIconPath": "./icon/cart_hover.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "我的",
+        "iconPath": "./icon/personal.png",
+        "selectedIconPath": "./icon/personal_hover.png"
+      }
+    ]
+  }
+}

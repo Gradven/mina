@@ -1,0 +1,87 @@
+<template name="goodsList">
+  <view class='goods_list'>
+    <image class='empty' wx:if="{{empty}}" style="margin-top:{{emptyTop}}px">
+    </image>
+    <!-- <wxc-abnor type="DATA" title="" wx:if="{{empty}}"></wxc-abnor> -->
+    <block wx:for="{{current}}" wx:key="item.id">
+      <view class='category' wx:if="{{item.viewType}}">
+        <text class='title'> {{item.name}}</text>
+        <view class='indicator'></view>
+      </view>
+      <view wx:else class="item_container" data-goods_id="{{item.goodsInfo.id}}" bindtap="toGoodsDetailPage">
+        <image class='img' src="{{item.goodsInfo.cover}}" mode='aspectFill'></image>
+        <text class='name'>{{item.goodsInfo.name}}</text>
+        <wxc-price value="{{item.goodsInfo.retailPrice}}" class='price' icon="sub"></wxc-price>
+        <text class='store'>库存 {{item.goodsInfo.storeNumber}}</text>
+      </view>
+    </block>
+  </view>
+</template>
+
+
+<template name="homeList">
+  <view class='home_list'>
+    <block wx:for="{{current}}" wx:key="item.id">
+      <view class='item'>
+        <text class='title'> {{item.recommend}}</text>
+        <view class='card' data-goods_id="{{item.goodsInfo.id}}" bindtap="toGoodsDetailPage">
+          <view class='img_container'>
+            <image class='img' src="{{item.goodsInfo.cover}}" mode='aspectFill'></image>
+            <block wx:if="{{item.saleStatusTitle}}">
+            <import src="./sold_out/sold_out.wxml" />
+            <template is="soldOut" data="{{title:item.saleStatusTitle}}"/>
+             </block>
+          </view>
+
+          <view class='intro'>
+            <text class='name' decode>{{item.goodsInfo.name}}</text>
+            <wxc-price value="{{item.goodsInfo.retailPrice}}" class='price' icon="sub" decimal="2" ></wxc-price>
+          </view>
+          <!-- <text class='store'>库存 {{item.goodsInfo.storeNumber}}</text> -->
+
+        </view>
+        <view class='action'>
+          <block wx:if="{{isInMyShop}}">
+            <view class='icon' hover-class="hover" data-name='edit' data-goods_index="{{index}}" bindtap='onItemActionClick'>
+              <i-icon type="editor" size="50" color="#80848f" />
+            </view>
+            <view class='icon' hover-class="hover" data-name='del' data-goods_id="{{item.goodsId}}" bindtap='onItemActionClick'>
+              <i-icon type="trash" size="50" color="#80848f" />
+            </view>
+            <view class='icon' hover-class="hover" data-name='share' data-goods_info="{{item}}" data-show="{{true}}" bindtap='handleShareEvent'>
+              <i-icon type="share" size="50" color="#80848f" />
+            </view>
+          </block>
+          <view class='praise' data-index="{{index}}" bindtap='showPraiseAni'>
+            {{item.goodsInfo.likeCount?item.goodsInfo.likeCount:0}}人喜欢
+            <view class="heart_ani {{item.goodsInfo.likeFlag==1?'heart_liked':item.showPraiseAni?'like-active':''}} "></view>
+            <!--  -->
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</template>
+
+<template name="goodsSearchResultList">
+  <view class='goods_list'>
+    <block wx:for="{{goods}}" wx:key="item.id">
+      <view class="search_item_container" data-goods_id="{{item.id}}" bindtap="toGoodsDetailPage">
+        <image class='img' src="{{item.cover}}" mode='aspectFill'></image>
+        <text class='name' decode>{{item.name}}</text>
+        <view class='row'>
+          <wxc-price value="{{item.retailPrice}}" class='price' icon="sub" decimal='2'></wxc-price>
+          <text class='store'>库存 {{item.storeNumber}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</template>
+
+
+<template name="emptyContent">
+  <view class='empty_container'>
+    <image class="img" mode="aspectFit" src="{{type=='emptyData'?'../../resources/images/ic_face_cry.png':'../../resources/images/ic_face_cry.png'}}"></image>
+    <text class='des'>{{des}}</text>
+  </view>
+</template>

@@ -1,0 +1,99 @@
+/* pages/goodsSlogan/slogan.wxss */
+
+page {
+  display: block;
+  min-height: 100%;
+  background-color: whitesmoke;
+}
+
+.container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.container .slogan_container{
+  display: flex;
+  width: 100%;
+  flex-flow: column nowrap;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 50rpx 30rpx;
+}
+
+.container .slogan_container .title{
+  color: black;
+  font-size: 46rpx;
+}
+
+.container  .btn_save{
+  color: white;
+  height: 90rpx;
+  width: 80%;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 45rpx;
+  background-color: #fe5a5d;
+  position: fixed;
+  line-height: 90rpx;
+  font-size: 32rpx;
+  bottom: 100rpx;
+  left: 10%;
+}
+
+
+.container .slogan_container .input{
+  width: 100%;
+  font-size: 32rpx;
+  line-height: 48rpx;
+  margin-top: 50rpx;
+  text-align: left;
+  min-height: 220rpx;
+}
+
+.container .slogan_container .text_count{
+  align-self: flex-end;
+  font-size: 24rpx;
+  color:#80848f;
+}
+
+.container .goods{
+  display: flex;
+  margin-top: 30rpx;
+  background-color: white;
+  flex-flow: row nowrap;
+  padding: 20rpx 20rpx;
+}
+
+.container .goods .img{
+  width: 220rpx;
+  height: 220rpx;
+}
+
+.container .goods .intro{
+  width: 490rpx;
+  padding-left: 30rpx;
+  height: 220rpx;
+  display: flex;
+  flex-flow: column nowrap;
+
+}
+
+.container .goods .intro .space_holder{
+  flex-grow: 1
+}
+
+.container .goods .intro .price{
+ font-size: 36rpx;
+}
+.container .goods .intro .name{
+  font-size: 28rpx;
+  color: #1c2438;
+}
+
+.container .goods .intro .profit{
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  color: #fe5a5d;
+}

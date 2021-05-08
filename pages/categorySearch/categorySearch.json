@@ -1,0 +1,12 @@
+{
+  "navigationStyle": "default",
+  "navigationBarTitleText": "",
+  "navigationBarTextStyle": "black",
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "i-modal": "../../dist/modal/index",
+    "wxc-loading": "../../dist/wxc-loading/index",
+    "goods-item": "../../dist/goods-item/index"
+  }
+}

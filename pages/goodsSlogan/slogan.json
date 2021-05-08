@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "吆喝一下",
+  "usingComponents": {
+    "wxc-price": "../../dist/price/index",
+    "wxc-loading": "../../dist/wxc-loading/index",
+    "wxc-toast": "../../dist/wxc-toast/index"
+  }
+}

@@ -1,0 +1,15 @@
+<template name="share_view">
+  <view class='share_view_container' capture-catch:touchmove="{{shareData.shareImgs == null?'preventPopup':''}}">
+    <i-icon type="close" size="40" color="#bcc0c3" class='close' data-which='timeLine' bindtap="handleShareCloseEvent" />
+    <share-view wx:if="{{shareData.shareImgs == null}}" info="{{shareData}}" canvasName="{{canvasId?canvasId:'shopShareCanvas'}}" bind:onShareImgSave="onShareImgSave"> </share-view>
+
+    <swiper wx:else class='share_swiper' next-margin="107rpx" previous-margin="107rpx" style="height:{{shareData.imageHeight}}px">
+      <swiper-item class="si" wx:for="{{shareData.shareImgs}}">
+        <image class='img' mode='aspectFit' src="{{item}}"></image>
+      </swiper-item>
+    </swiper>
+
+    <text class='btn' bindtap='saveShareImg'>保存图片</text>
+    <text class='tips'>保存图片后分享朋友圈，会有更多的人来您的店铺哦</text>
+  </view>
+</template>

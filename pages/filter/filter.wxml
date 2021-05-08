@@ -1,0 +1,14 @@
+<view class='container'>
+  <view class='label'>
+    价格区间<text>(元)</text>
+  </view>
+  <view class='price'>
+    <input type='number' placeholder='最低价' bindinput='setMinRetailPrice'></input>
+    <text>-</text>
+    <input type='number' placeholder='最高价' bindinput='setMaxRetailPrice'></input>
+  </view>
+  <view class='btn-bar'>
+    <view class='cancel' bindtap='cancel'>取消</view>
+    <view class='ok' bindtap='ok'>确认</view>
+  </view>
+</view>

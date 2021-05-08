@@ -1,0 +1,230 @@
+.user-info{
+  position: relative;
+  top:20rpx;
+  width:750rpx;
+  height: 280rpx;
+  transition: all 1s;
+}
+.user-info.small{
+  width:750rpx;
+  height: 150rpx;
+}
+
+.user-info image{
+  position: relative;
+  left:300rpx;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius:100rpx;
+  transition: all 1s;
+}
+
+.user-info.small image{
+  position: relative;
+  left:25rpx;
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.user-info .nickname{
+  position: absolute;
+  left:80rpx;
+  top:160rpx;
+  font-size:30rpx;
+  line-height: 60rpx;
+  transition: all .9s 0.1s;
+}
+.user-info.small .nickname{
+  position: absolute;
+  left:150rpx !important;
+  top:20rpx;
+}
+
+.personal-box{
+  position: relative;
+  width:750rpx;
+  animation:left-in 1s;
+}
+@keyframes left-in
+{
+  from {left:-750rpx;}
+  to {left:0rpx;}
+}
+
+.function-area{
+  display: flex;
+  width:100%;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+.function-area .item{
+  position:relative;
+  flex-grow: 1;
+  padding-top:2.2em;
+  font-size:24rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+}
+.function-area .item:nth-child(1){
+  background: url('https://hq-prod.oss-cn-hangzhou.aliyuncs.com/icons/topay.png') top center no-repeat;
+  background-size:2em 2em;
+}
+.function-area .item:nth-child(2){
+  background: url('https://hq-prod.oss-cn-hangzhou.aliyuncs.com/icons/toreceive.png') top center no-repeat;
+  background-size:2em;
+}
+.function-area .item:nth-child(3){
+  background: url('https://hq-prod.oss-cn-hangzhou.aliyuncs.com/icons/refresh.png') top center no-repeat;
+  background-size:2em;
+}
+.function-area .item:nth-child(4){
+  background: url('https://hq-prod.oss-cn-hangzhou.aliyuncs.com/icons/list.png') top center no-repeat;
+  background-size:2em;
+}
+
+.function-area .item .count{
+  position:absolute;
+  top:-15rpx;
+  right:40rpx;
+  font-size:24rpx;
+  width:40rpx;
+  height:40rpx;
+  color:#fff;
+  line-height:40rpx;
+  text-align: center;
+  border-radius:20rpx;
+  background:#fe5a5d;
+}
+
+.function-area .item.on{
+  color:#fe5a5d;
+}
+
+.sale-manage{
+  position: relative;
+  width:750rpx;
+  animation:right-in 1s;
+}
+@keyframes right-in
+{
+  from {left:750rpx;}
+  to {left:0rpx;}
+}
+
+.shop-wallet{
+  margin-top:30rpx;
+  padding:0 30rpx;
+}
+.shop-wallet .wallet .title{
+  font-size:30rpx;
+  color:#333;
+}
+.shop-wallet .wallet .title span{
+  font-size:24rpx;
+  color:#999;
+}
+
+.shop-wallet .wallet .value{
+  font-size:60rpx;
+  color:#f33;
+  height: 180rpx;
+  line-height: 180rpx;
+}
+.wallet-count{
+  height: 180rpx;
+}
+.wallet-count>view{
+  float:left;
+}
+.wallet-count .profit{
+  width: 50%;
+  box-sizing:border-box;
+  border-right: 1px solid #f2f2f2;
+}
+.wallet-count .order-count{
+  width: 50%;
+  padding-left:30rpx;
+  box-sizing:border-box;
+}
+.wallet-count .title{
+  font-size:26rpx;
+  color:#333;
+}
+.wallet-count .title span{
+  font-size:20rpx;
+  color:#999;
+}
+.wallet-count .value{
+  font-size:50rpx;
+  color:#333;
+  height: 120rpx;
+  line-height: 120rpx;
+}
+
+.list-box{
+  margin-top:0rpx;
+}
+
+.list-box .item{
+  position:relative;
+  margin: 0 30rpx;
+  font-size:30rpx;
+  line-height: 90rpx;
+  color:#333;
+  border-bottom:1px solid #eee;
+}
+.list-box .item.last{
+  border-bottom:none;
+}
+.list-box .item .before{
+  float:left;
+  width: 70rpx;
+  height: 90rpx;
+}
+.list-box .item .phone{
+  float:right;
+  margin-right: 40rpx;
+  line-height: 90rpx;
+}
+.list-box .item .enter{
+  position: absolute;
+  right:-10rpx;
+  top:0;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+
+.list-box .share{
+  margin:100rpx auto 0;
+  width: 600rpx;
+}
+
+.list-box .item .logo-list{
+  position: absolute;
+  right:180rpx;
+  top:0;
+}
+.list-box .item .logo-list image{
+  position: absolute;
+  left:0;
+  top:15rpx;
+  display: block;
+  width: 60rpx;
+  height: 60rpx;
+  z-index: 1;
+  border-radius:60rpx;
+  background:#fff;
+}
+.list-box .item .logo-list image:nth-child(1){
+  left:0;
+  z-index: 9;
+}
+.list-box .item .logo-list image:nth-child(2){
+  left:45rpx;
+  z-index: 8;
+}
+.list-box .item .logo-list image:nth-child(3){
+  left:90rpx;
+  z-index: 7;
+}

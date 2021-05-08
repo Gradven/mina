@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "访问过的店铺",
+  "usingComponents": {
+    "i-icon": "../../../dist/icon/index",
+    "wxc-loading": "../../../dist/wxc-loading/index"
+  }
+}

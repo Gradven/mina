@@ -1,0 +1,22 @@
+<!--pages/shop/shop.wxml-->
+<view class='container header_float'>
+  <view class='top_action'>
+    <wxc-search class="search_box" show-icon="{{true}}" button="搜索" btn-color="#f62b12" placeholder="搜索店铺" bind:submit="submitForm" bind:confirm="submitForm" bindinput="inputSearch" bind:onSearchClear="onSearchClear"></wxc-search>
+  </view>
+  <wxc-abnor type="SHOP"  wx:if="{{empty}}"></wxc-abnor>
+  <view class='shopInfoList'>
+    <view class='item' wx:key="{{index}}" wx:for="{{shopInfoList}}" 
+    data-id="{{item.id}}" bindtap='intoShop'>
+      <image src="{{item.logo}}"></image>
+      <view class='content'>
+        {{item.name}}
+      </view>
+    </view>
+    <view class='more' wx:if="{{shopInfoList.length > 0}}">{{hasMore?'正在拼命加载中...':'已加载全部'}}</view>
+  </view>
+</view>
+
+<wxc-loading is-show="{{isLoading}}" type="mall"></wxc-loading>
+
+<i-toast id="toast" />
+<wxc-loading is-show="{{isLoading}}" type="mall"></wxc-loading>

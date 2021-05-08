@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "share-view": "../share-view/index",
+    "wxc-popup": "../wxc-popup/index",
+    "wxc-icon": "../wxc-icon/index",
+    "wxc-price": "../price/index",
+    "wxc-toast": "../wxc-toast/index",
+    "wxc-loading": "../wxc-loading/index",
+    "i-icon": "../icon/index"
+  },
+  "component": true
+}

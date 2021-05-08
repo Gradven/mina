@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "退货详情",
+  "usingComponents": {
+    "i-icon": "../../../dist/icon/index",
+    "wxc-icon": "../../../dist/wxc-icon/index",
+    "wxc-price": "../../../dist/price/index",
+    "wxc-loading": "../../../dist/wxc-loading/index",
+    "wxc-toast": "../../../dist/wxc-toast/index"
+  }
+}

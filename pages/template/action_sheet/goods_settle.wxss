@@ -1,0 +1,151 @@
+
+.sheet_container {
+  width: 100%;
+  height: 650rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.sheet_container .main {
+  width: 100%;
+  height: 600rpx;
+  background-color: white;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  display: flex;
+  flex-flow: column nowrap;
+  box-sizing: border-box;
+  padding: 30rpx 30rpx;
+}
+
+.sheet_container .close {
+  align-self: flex-end;
+  margin-right: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.sheet_container .title {
+  height: 40rpx;
+  font-size: 36rpx;
+  line-height: 40rpx;
+  color: black;
+  box-sizing: border-box;
+  font-weight: bold;
+  margin: 0;
+  padding: 0 0;
+}
+
+
+
+.sheet_container .container .price {
+  width: 420rpx;
+  margin-top: 10rpx;
+  margin-left: 280rpx;
+  color: #1c2438;
+}
+
+.sheet_container .main .divider {
+  margin-top: 30rpx;
+  background-color: #e9eaec;
+  height: 2rpx;
+  width: 100%;
+  align-self: center;
+}
+
+.sheet_container .main .address{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  height: 150rpx;
+  font-size: 30rpx;
+  color: #1c2438;
+}
+
+.sheet_container .main .address .info{
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: space-around;
+    box-sizing: border-box;
+    color: #80848f;
+}
+
+
+.sheet_container .main .address .info  .consignee{
+    display: flex;
+    width: 100%;
+    flex-flow: row nowrap;
+    color: #80848f;
+}
+
+.sheet_container .main .address .info .consignee .consignee_title{
+  color: black;
+  font-size: 30rpx;
+  margin-right: 20rpx;
+}
+
+.sheet_container .main .address .info .consignee .consignee_name{
+  flex-grow: 1;
+}
+
+
+.sheet_container .main .text{
+  flex-grow: 1;
+  margin-left: 10rpx;
+}
+
+.sheet_container .main .settle_item{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  font-size: 28rpx;
+  font-weight: bold;
+  color:black;
+  margin-top: 30rpx;
+}
+
+.sheet_container .main .bottom{
+  position: fixed;
+  width: 690rpx;
+  left: 30rpx;
+  bottom: 50rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 36rpx;
+}
+
+
+.sheet_container .main .bottom .amount{
+  flex-grow: 1;
+  margin-left: 10rpx;
+  padding-left: 0rpx;
+  color: #fe5a5d;
+
+}
+
+.sheet_container .main .bottom .btn_pay {
+  width: 9em;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background-color: #fe5a5d;
+  border-radius: 40rpx;
+  font-weight: normal;
+  color: white;
+  font-size: 36rpx;
+}
+
+
+
+
+
+

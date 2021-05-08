@@ -1,0 +1,142 @@
+page {
+  display: block;
+  min-height: 100%;
+  background-color: whitesmoke;
+}
+
+
+.pending-box{
+  width: 750rpx;
+  height: 100%;
+}
+
+.order-item{
+  padding:30rpx;
+  margin-bottom:20rpx;
+  background:#fff;
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.order-no{
+  font-size:24rpx;
+  color:#495060;
+  line-height: 30rpx;
+  margin-bottom: 30rpx;
+}
+.order-no .gray{
+  float:left;
+  color:#80848f;
+}
+
+.order-no text{
+  float: right;
+  color:#fe5a5d;
+}
+
+.goods-list{
+  margin:10rpx 0;
+  width:100%;
+}
+.goods-list image{
+  margin:0 30rpx;
+  width:150rpx;
+  height: 150rpx;
+  text-align: center;
+}
+.content-box{
+  margin:10rpx 0;
+  width:100%;
+  height: 220rpx;
+}
+.content-box image{
+  float:left;
+  margin-right: 30rpx;
+  width:220rpx;
+  height: 220rpx;
+}
+
+.content-box .content{
+  float: left;
+  width:440rpx;
+  height: 200rpx;
+  margin-top: 10rpx;
+  display: flex;
+  flex-flow: column nowrap;
+  box-sizing: border-box;
+}
+
+.content-box .content .name{
+  font-size:26rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: pre-wrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  color:#495060;
+}
+
+.content-box .content .spec{
+  font-size:22rpx;
+  margin-top: 10rpx;
+  color:#80848f;
+}
+
+.content-box .content .holder{
+  width: 100%;
+  height: 1rpx;
+  flex-grow: 1;
+}
+
+.content-box .content .price{
+  font-size:30rpx;
+  border-top:none;
+  color:#1c2438;
+}
+
+.content-box .content .price text{
+  float:right;
+  color:#1c2438;
+}
+
+.content-box .content .price .goodsNumber{
+  float:right;
+  color:#1c2438;
+  font-size: 26rpx;
+}
+.desc{
+  margin-top: 10rpx;
+  text-align: right;
+  font-size:24rpx;
+  color:#80848f;
+}
+.desc .desc-price{
+  color:#1c2438;
+}
+.btn-bar{
+  height: 70rpx;
+  margin-top: 30rpx;
+}
+.btn-bar .btn{
+  font-size:24rpx;
+  float:right;
+  width:200rpx;
+  height:60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border-radius: 60rpx;
+  color:#fff;
+  background:#fe5a5d;
+  border:1px solid #fe5a5d;
+}
+
+.more{
+  font-size: 24rpx;
+  line-height: 72rpx;
+  text-align: center;
+  color:#999;
+  margin-bottom: 30rpx;
+}

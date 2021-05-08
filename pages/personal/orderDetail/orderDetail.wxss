@@ -1,0 +1,166 @@
+page{
+  height: 100%;
+}
+.order-detail-box{
+  width:750rpx;
+  padding-bottom:100rpx;
+  height: 100%;
+  background:#eee;
+  box-sizing: border-box;
+}
+
+.address-box{
+  margin-bottom: 20rpx;
+  padding:30rpx;
+  background:#fff;
+}
+
+.address-box .title{
+  font-size:24rpx;
+  font-weight: bold;
+  line-height: 48rpx;
+}
+
+.address-box .name{
+  font-size:24rpx;
+  color:#999;
+  line-height: 48rpx;
+}
+
+.address-box text{
+  float: right;
+  font-size:24rpx;
+  line-height: 48rpx;
+}
+.address-box .address{
+  font-size:24rpx;
+  color:#999;
+  line-height: 48rpx;
+}
+.goods-box{
+  margin-bottom: 20rpx;
+  padding:30rpx;
+  background:#fff;
+}
+
+.goods-box .title{
+  font-size:24rpx;
+  font-weight: bold;
+  line-height: 48rpx;
+}
+
+.goods-box .goods{
+  padding:30rpx 0;
+  height: 260rpx;
+}
+
+.goods-box .goods image{
+  float: left;
+  margin-right: 50rpx;
+  width:200rpx;
+  height: 200rpx;
+  object-fit: contain;
+}
+
+.goods-box .goods .content{
+  float: left;
+  font-size:24rpx;
+  width:440rpx;
+  color:#999;
+  line-height: 48rpx;
+}
+
+.goods-box .goods .content .name{
+  font-size:32rpx;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  white-space:pre-wrap;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  line-height:48rpx;
+}
+
+.goods-box .goods .content .type{
+  padding:10rpx 0;
+}
+
+.goods-box .goods .content .price{
+  border-top:none;
+  color:#333;
+}
+
+.goods-box .goods .content .price text{
+  float:right;
+  color:#999;
+}
+
+.btn-border{
+  font-size:24rpx;
+  float:right;
+  width:200rpx;
+  height:60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border-radius: 60rpx;
+  color:#f33;
+  border:1px solid #f33;
+}
+.btn-apply{
+  font-size:24rpx;
+  margin-right:20rpx;
+  float:right;
+  width:200rpx;
+  height:60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border-radius: 60rpx;
+  color:#333;
+  border:1px solid #333;
+}
+
+.goods-box .price{
+  font-size:24rpx;
+  color:#999;
+  line-height: 48rpx;
+  border-top:1px solid #eee;
+}
+
+.goods-box .price .txt{
+  float: right;
+  font-size:24rpx;
+  color:#f22;
+  line-height: 48rpx;
+}
+
+.sn-box{
+  padding:30rpx;
+  font-size:24rpx;
+  color:#999;
+  line-height: 48rpx;
+  background:#fff;
+}
+
+.btn-bar{
+  position: fixed;
+  left:0;
+  bottom:0;
+  padding:30rpx;
+  width:750rpx;
+  height: 100rpx;
+  background: #fff;
+  box-sizing: border-box;
+  box-shadow: 1px -2px 2px #eee;
+}
+
+.btn-bar .pay-btn{
+  float:right;
+  font-size:24rpx;
+  width:150rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  color:#f33;
+  border-radius: 48rpx;
+  text-align: center;
+  border:1px solid #f33;
+}

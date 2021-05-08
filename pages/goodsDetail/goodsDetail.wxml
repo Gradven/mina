@@ -1,0 +1,152 @@
+<!--pages/goodsDetail/goodsDetail.wxml-->
+
+<view class='container footer_float' wx:if="{{goods}}">
+  <view class='other_shop' wx:if="{{!inMyShop&&hasShop}}">
+    <text>您正在浏览 {{shopInfo.name}}</text>
+    <text class='back_btn' bindtap='backToMyShop'>回自己店铺</text>
+  </view>
+  <view class='banner'>
+    <swiper indicator-dots="{{goods.picUrls.length>1}}" autoplay="{{autoplay}}" interval="3000" duration="800" class='swiper' circular="{{true}}">
+      <block wx:for="{{goods.picUrls}}" wx:key="{{index}}">
+        <swiper-item>
+          <image src="{{item}}" class="img_shadow" mode='aspectFill' data-picUrl="{{item}}" bindtap='previewImage' />
+        </swiper-item>
+      </block>
+    </swiper>
+    <block wx:if="{{goods.saleStatusTitle}}">
+      <import src="../template/sold_out/sold_out.wxml" />
+      <template is="soldOut" data="{{title:goods.saleStatusTitle}}" />
+    </block>
+  </view>
+  <view class='price_container'>
+    <wxc-price class='price' icon="sub" decimal="2" value="{{currentProduct?currentProduct.retailPrice :goods.retailPrice}}" wx:if="{{goods.retailPrice}}"></wxc-price>
+
+      <text class='profit_sub' wx:if="{{ hasShop && currentProduct && isMember}}">赚￥</text>
+      <text class="profit_value" wx:if="{{ hasShop && currentProduct && isMember}}">{{currentProduct.profit}}</text>
+
+    <text class='store' wx:if="{{currentProduct}}">库存 {{currentProduct.storeNumber}}</text>
+
+  </view>
+  <text class='title' decode>{{goods.name}}</text>
+  <text class='short_des' decode wx:if="{{goods.shortDescription}}">{{goods.shortDescription}}</text>
+  <view class='assurance'>
+    <view class='item'>
+      <i-icon type="integral" color="#f62b12" size="48"></i-icon>
+      <text class='text'>正品保证</text>
+    </view>
+
+    <view class='item'>
+      <i-icon type="time" color="#f62b12" size="48"></i-icon>
+      <text class='text'>限时包邮</text>
+    </view>
+
+    <view class='item'>
+      <i-icon type="emoji_fill" color="#f62b12" size="48"></i-icon>
+      <text class='text'>{{goods.service == 1?'7天放心退':'不支持7天退换'}}</text>
+    </view>
+  </view>
+
+  <view class='action_panel'>
+    <view class='choice' data-choose="{{true}}" bindtap='showSpecDialog'>
+      <view class='left'>
+        <text class='des'>已选择 :</text>
+        <text class='content'>{{specsSummary}}</text>
+      </view>
+      <i-icon type="enter" color="#cbcbcb" size="40"></i-icon>
+    </view>
+
+    <view class='choice' style='margin-top:20rpx' bindtap='handleOnAddressClicked'>
+      <view class='left'>
+        <text class='des'>配送至 :</text>
+        <text class='content line_one'>{{address}}</text>
+      </view>
+      <i-icon type="enter" color="#cbcbcb" size="40"></i-icon>
+    </view>
+
+    <view class='shop'>
+      <view class='top'>
+        <view class='user'>
+          <image class='avatar' mode='aspectFill' src="{{shopInfo.logo}}"></image>
+          <text>{{shopInfo.name}}</text>
+        </view>
+        <text class='enter' bindtap='toShop'>进入店铺</text>
+      </view>
+      <text class='des line_one'>{{shopInfo.description}}</text>
+    </view>
+
+    <view class='goods_intro' wx:if="{{goodsParams}}">
+      <text class='title'>商品介绍</text>
+      <view class='intro_item' wx:for="{{goodsParams}}" wx:key="{{item.id}}">
+        <text class='item_title line_one'>{{item.name}}:</text>
+        <text class='item_value'>{{item.value}}</text>
+      </view>
+      <view class='more' wx:if="{{goods.goodsParamList.length>3}}" bindtap='showMoreParams'>
+        <text>{{moreUnfolded?'收起':'更多参数'}}</text>
+        <i-icon type="{{moreUnfolded?'packup':'unfold'}}" color="#80848f" size="30" i-class='icon'></i-icon>
+      </view>
+    </view>
+
+    <view class='descriptionDetail' hidden="{{descriptions==null}}">
+      <text class='title'>图文详情</text>
+      <import src="../../wxParse/wxParse.wxml" />
+      <view class="wxParse">
+        <template is="wxParse" data="{{wxParseData:articleContent.nodes}}" />
+      </view>
+    </view>
+
+    <wxc-loadmore is-end="{{true}}" text="到底了" icon="{{true}}" style="margin-top:30rpx"></wxc-loadmore>
+  </view>
+
+  <text class='agency' style="top:{{inMyShop?760:840}}rpx" bindtap='handleOnAgencyClicked' wx:if="{{agency}}">{{agency}}</text>
+
+  <view class='footer_action'>
+    <view class='icon' bindtap='toShop'>
+      <i-icon type="homepage" size="60" color="#80848f" />
+      <text>进店铺</text>
+    </view>
+
+    <view class='icon'>
+      <i-badge dot="{{productInCart}}">
+        <i-icon type="publishgoods_fill" size="60" color="#80848f" bindtap='toCartPage' />
+      </i-badge>
+      <text>购物车</text>
+    </view>
+    <block wx:if="{{goods.saleStatusTitle}}">
+      <text class='btn_disalbe'>{{goods.saleStatusTitle}}</text>
+    </block>
+    <block wx:elif="{{hasShop && isMember}}">
+      <text class='btn_add' data-choose="{{true}}" bindtap='showSpecDialog'>购买</text>
+      <view class='btn_sell' bindtap='onOpenSharePopup' >
+        <view class='content'>
+          <text>卖</text><text class='profit' wx:if="{{currentProduct}}">(赚￥{{currentProduct.profit}})</text>
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+      <text class='btn_add' bindtap='handleAdd2Cart'>加入购物车</text>
+      <text class='btn_purchase' data-choose="{{true}}" bindtap='showSpecDialog'>立即购买</text>
+    </block>
+
+  </view>
+</view>
+
+<wxc-popup class="popup_spec" animation-mode="bottom" align="bottom" locked="true" catch:touchmove='preventTouchPop'>
+  <import src="../template/action_sheet/goods_spec.wxml" />
+  <template is="spec_sheet" data="{{quantity:quantity,specs:specs,goods:goods,product:currentProduct,chooseSpec:chooseSpec,hasShop:hasShop,isMember:isMember}}" />
+</wxc-popup>
+
+<wxc-popup class="popup_settle" animation-mode="bottom" align="bottom" locked="true">
+  <import src="../template/action_sheet/goods_settle.wxml" />
+  <template is="settle_sheet" data="{{visible:settleShow,addressInfo:addressInfo,amount:orderAmount}}" />
+</wxc-popup>
+
+<wxc-popup class="popup_address" animation-mode="bottom" align="bottom" >
+  <import src="../template/action_sheet/goods_address.wxml" />
+  <template is="address_sheet" data="{{addressList:addressList}}" />
+</wxc-popup>
+
+<wxc-loading is-show="{{isLoading}}" type="mall"></wxc-loading>
+<wxc-toast is-show="{{xToast.show}}" icon="{{xToast.icon}}" text="{{xToast.title}}" icon-color="#fe5a5d"></wxc-toast>
+<i-toast id="toast" />
+
+<x-share wx:if="{{showShare}}" show="{{showShare}}" shareData="{{shareData}}" bind:onCloseSharePopup="onCloseSharePopup"> </x-share>

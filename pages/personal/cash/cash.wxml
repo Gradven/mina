@@ -1,0 +1,19 @@
+<view class='container'>
+  <view class="input-box">
+    <view>￥</view>
+    <view>
+    <input placeholder='账户余额{{shopWallet.balance}}元' value="{{amount}}" bindinput="bindAmountInput"></input>
+    </view>
+    <view class='btn'  bindtap='getAll'>提取全部</view>
+  </view>
+  <view class='desc-box'>
+    <view class='desc'>· 最低提现金额<text>10</text>元</view>
+    <view class='desc'>· 当前仅支持提现到微信零钱</view>
+  </view>
+  <view class='submit-box'>
+    <view class='submit' bindtap='withdrawInfo'>
+      确认提现
+    </view>
+  </view>
+</view>
+<wxc-loading is-show="{{isLoading}}" type="mall"></wxc-loading>

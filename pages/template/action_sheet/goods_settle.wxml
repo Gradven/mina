@@ -1,0 +1,45 @@
+<template name="settle_sheet">
+  <view class='sheet_container'>
+    <i-icon type="close" size="40" color="#bcc0c3" class='close' data-which='settle' bindtap="onPopCloseClicked" />
+    <view class='main'>
+      <text class="title">结算</text>
+      <view class='divider'></view>
+      <view class='address' bindtap='selectFromAddressPage'>
+        <block wx:if="{{addressInfo ==null }}">
+          <i-icon type="coordinates" size="60" color="#bcc0c3" />
+          <text class='text'>添加收货地址</text>
+        </block>
+        <block wx:else>
+          <view class='info'>
+            <view class='consignee'>
+              <text class='consignee_title'>收件人</text>
+              <text class='consignee_name'>{{addressInfo.consignee}}</text>
+              <text class='tel'>{{addressInfo.phoneHidden}}</text>
+            </view>
+            <text class='detail'>{{addressInfo.simple}}</text>
+          </view>
+          
+        </block>
+        <i-icon type="enter" size="40" color="#bcc0c3" />
+      </view>
+
+      <view class='divider' style='margin-top:0rpx'></view>
+      <view class='settle_item'>
+        <text>商品总额</text>
+        <text>￥{{amount}}</text>
+      </view>
+
+      <view class='settle_item'>
+        <text>运费</text>
+        <text>￥0.00</text>
+      </view>
+
+      <view class='bottom'>
+        <text>应付</text>
+        <text class='amount'>￥{{amount}}</text>
+        <text class='btn_pay' bindtap='createOrder'>微信支付</text>
+      </view>
+    </view>
+
+  </view>
+</template>

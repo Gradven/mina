@@ -1,0 +1,85 @@
+.share_sheet_container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+.share_sheet_container .close {
+  align-self: flex-end;
+  margin-right: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.share_sheet_container .goods_info {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  height: auto;
+  width: 100%;
+  padding-top: 50rpx;
+  box-sizing: border-box;
+}
+
+.share_sheet_container .goods_info .profit {
+  color: #fe5a5d;
+  font-size: 24rpx;
+}
+
+.share_sheet_container .goods_info .profit .price{
+  font-size: 36rpx;
+  margin-left: 10rpx;
+}
+
+.share_sheet_container .goods_info .des {
+  width: 90%;
+  margin-top: 20rpx;
+  height: 120rpx;
+  border-radius: 20rpx;
+  background-color: #f8f8f9;
+  font-size: 24rpx;
+  line-height: 40rpx;
+  color: #495060;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.share_sheet_container .main {
+  background-color: white;
+  display: flex;
+  width: 750rpx;
+  height: 250rpx;
+  flex-flow: row nowrap;
+  box-sizing: border-box;
+}
+
+.share_sheet_container .main .col {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 50%;
+  height: 100%;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+}
+
+.share_sheet_container .main .share_to_friend {
+  width: 375rpx;
+  height: 250rpx;
+  position: absolute;
+  border: none;
+  left: 0;
+  bottom: 0;
+}
+
+.share_sheet_container .main .col .text {
+  margin-top: 30rpx;
+  font-size: 24rpx;
+}

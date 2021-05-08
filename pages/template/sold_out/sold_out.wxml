@@ -1,0 +1,9 @@
+<template name="soldOut">
+  <view class='sold_out'>
+    <text class='sold_title'>{{title}}</text>
+    <block wx:if="{{title == '已售完'}}">
+    <view class='sold_divider'></view>
+    <text class='sold_subtitle'>SOLD OUT</text>
+    </block>
+  </view>
+</template>

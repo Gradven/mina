@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "待收货",
+  "usingComponents": {
+    "i-icon": "../../../dist/icon/index",
+    "wxc-abnor": "../../../dist/wxc-abnor/index",
+    "wxc-loading": "../../../dist/wxc-loading/index",
+    "wxc-abnor": "../../../dist/wxc-abnor/index",
+    "wxc-price": "../../../dist/price/index"
+  }
+}

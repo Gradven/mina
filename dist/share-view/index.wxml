@@ -1,0 +1,1 @@
+<canvas wx:if="{{widthPx!=0}}" canvas-id="{{canvasName}}" disable-scroll="{{true}}" class='canvas' style="width:{{widthPx}}px;height:{{heightPx}}px" binderror="canvasIdErrorCallback" bindtap="preventPopup"  capture-catch:touchstart="preventPopup"/>

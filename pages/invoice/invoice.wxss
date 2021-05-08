@@ -1,0 +1,116 @@
+/* pages/address/address.wxss */
+
+page {
+  display: block;
+  min-height: 100%;
+  background-color: whitesmoke;
+}
+
+/* @import "../lib/weui.wxss";
+.picker{
+    padding: 13px;
+    background-color: #FFFFFF;
+} */
+
+.add_btn {
+  position: fixed;
+  bottom: 100rpx;
+  left: 14%;
+  width: 72%;
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+  background-color: #fe5a5d;
+  font-size: 32rpx;
+  border-radius: 45rpx;
+  color: white;
+}
+
+
+.container .list {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  flex-flow: column nowrap;
+}
+
+.container .list .item {
+  margin-top: 30rpx;
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  flex-flow: row nowrap;
+  background-color: white;
+  align-items: center;
+}
+
+.container .list .item .checkBox {
+  width: 110rpx;
+}
+
+.container .list .item .content {
+  flex-grow: 1;
+  padding-right: 40rpx;
+  display: flex;
+  flex-flow: column nowrap;
+  box-sizing: border-box;
+}
+
+.container .list .item .content .contract {
+  margin-top: 30rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.container .list .item .content .contract .phone {
+  font-size: 28rpx;
+  color: #495060;
+}
+
+.container .list .item .content .address {
+  margin-top: 30rpx;
+  font-size: 28rpx;
+  width: auto;
+  color: #495060;
+  overflow:hidden;
+  
+}
+
+.container .list .item .content .accept {
+  margin-top: 30rpx;
+  font-size: 24rpx;
+  color: #80848f;
+}
+
+.container .list .item .content .divider {
+  width: 100%;
+  height: 1rpx;
+  margin-top: 20rpx;
+  background-color: #e9eaec;
+}
+
+.container .list .item .content .action {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  padding: 20rpx 20rpx;
+  padding-left: 0rpx;
+  font-size: 24rpx;
+  align-items: center;
+  color: #80848f;
+}
+
+.container .list .item .content .action .invoice_type{
+  flex-grow: 1;
+}
+
+.disable{
+  color: #bbbec4!important;
+}
+
+.bottomPadding{
+  padding-bottom: 220rpx;
+}

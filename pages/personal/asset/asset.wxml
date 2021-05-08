@@ -1,0 +1,52 @@
+<view wx:if="{{!isLoading}}">
+  <view class='notice' wx:if="{{userCertificateInfo.approveStatus != 1}}">
+    <i-icon type="prompt_fill" size='40' />
+    根据监管要求，首次提现前需完成实名认证。
+  </view>
+  <view class='asset-box'>
+    <view class='title'>
+      <i-icon class='redpacket' size='40' color="#fff" type="redpacket" />
+      可提现金额
+    </view>
+    <view class='balance'>
+      <wxc-price value="{{shopWallet.balance || '0'}}" icon="sub" wx:if="{{shopWallet.shopId}}"></wxc-price>
+    </view>
+    <view class='wating' wx:if="{{shopWallet.shopId}}">
+      待入账金额
+      <wxc-price value="{{shopWallet.unAvailableProfit || '0'}}" icon="none"></wxc-price>
+      <i-icon class='feedback_fill' size='40' color="#fff" type="feedback_fill" bindtap='showFeedback' />
+    </view>
+    <view class='btn' bindtap='cash'>提现</view>
+    <view class='desc' wx:if="{{userCertificateInfo.approveStatus != 1}}">·请完成实名认证</view>
+  </view>
+  <view class='profit-list' wx:if="{{shopProfitList.length > 0}}">
+    <view class='item' wx:key="{{index}}" wx:for="{{shopProfitList}}">
+      <view class='content'>
+        佣金收入
+        <view class='time'>{{item.createTime}}</view>
+      </view>
+      <view class='profit'>
+        <wxc-price value="{{item.profit}}" icon="sub" wx:if="{{item.profit}}"></wxc-price>
+      </view>
+    </view>
+    <view class='more' wx:if="{{shopProfitList.length > 0}}">{{hasMore?'正在拼命加载中...':'已加载全部'}}</view>
+  </view>
+</view>
+<wxc-loading is-show="{{isLoading}}" type="mall"></wxc-loading>
+<view class='feedbackpop' wx:if="{{feedbackFlag}}">
+  <view class='feedbackbox'>
+    <i-icon class='close' size='50' type="close" bindtap='hideFeedback' />
+    <view class='content'>
+      <view class='title'>亲爱的店主：</view>
+      <view class='text'>
+        为保障您享有合法的收益权利，在用户<view class='red'>确认签收后的第{{day}}天</view>，
+        该订单产生的收益将自动转入您的<view class='red'>可提现</view>金额中。在此之前，
+        该笔收益将等待入账(简称“待入账收益”)，请耐心等候。
+      </view>
+      <view class='status'>
+        <view class='left'>已签收</view>
+        <view class='right'>第{{day}}天</view>
+      </view>
+    </view>
+  </view>
+</view>

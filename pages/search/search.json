@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "wxc-icon": "../../dist/wxc-icon/index",
+    "i-toast": "../../dist/toast/index",
+    "wxc-search": "../../dist/search/index",
+    "wxc-loading": "../../dist/wxc-loading/index",
+    "wxc-abnor": "../../dist/wxc-abnor/index",
+    "wxc-price": "../../dist/price/index"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "添加发票抬头",
+  "usingComponents": {
+    "wxc-icon": "../../../dist/wxc-icon/index",
+    "i-icon": "../../../dist/icon/index",
+    "wxc-loadmore": "../../../dist/wxc-loadmore/index",
+    "wxc-loading": "../../../dist/wxc-loading/index",
+    "wxc-toast": "../../../dist/wxc-toast/index"
+  }
+}

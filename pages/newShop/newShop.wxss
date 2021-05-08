@@ -1,0 +1,70 @@
+/* pages/newShop/newShop.wxss */
+.content-box{
+  width: 750rpx;
+  overflow: hidden;
+}
+.content-box .title{
+  font-size:60rpx;
+  margin:60rpx 30rpx;
+}
+
+.content-box .row{
+  font-size: 30rpx;
+  width: 100%;
+  height: 90rpx;
+  margin:0 30rpx; 
+  color:#999;
+  box-sizing:border-box;
+  border-bottom:1px solid #eee;
+}
+
+.content-box .row>text{
+  float:left;
+  width:150rpx;
+  line-height: 90rpx;
+}
+.content-box .row text.getCode{
+  color: #5ddcda;
+  width:250rpx;
+  text-align: center;
+}
+
+.content-box .row text.getCode.gray{
+  color:#ccc;
+}
+
+.content-box .row input{
+  float:left;
+  width:300rpx;
+  height:100%;
+  line-height:100%;
+  box-sizing:border-box;
+}
+
+.content-box .btn-box{
+  position:fixed;
+  bottom:100rpx;
+  width:100%;
+}
+.content-box .btn-box .checkbox-group{
+  font-size:30rpx;
+  margin:30rpx auto;
+  width:300rpx;
+}
+.content-box .btn-box .checkbox-group text{
+  color:#f22;
+}
+.content-box .btn-box .btn{
+  margin: 0 auto;
+  width:700rpx;
+  color:#fff;
+  height: 90rpx;
+  text-align:center;
+  line-height: 90rpx;
+  background: #ff4241;
+  border-radius: 60rpx;
+}
+
+.content-box .btn-box .btn.gray{
+  background:#ccc;
+}

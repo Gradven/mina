@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "提现",
+  "usingComponents": {
+    "wxc-loading": "../../../dist/wxc-loading/index",
+    "i-icon": "../../../dist/icon/index"
+  }
+}

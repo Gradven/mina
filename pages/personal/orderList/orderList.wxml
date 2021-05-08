@@ -1,0 +1,38 @@
+<view class='none' wx:if="{{!isLoading && orderList.length <= 0}}">
+  <wxc-abnor type="DATA" title="暂无订单" ></wxc-abnor>
+</view>
+<view class='order-list-box' wx:if="{{orderList.length > 0}}">
+  <view class='order-item' wx:for="{{orderList}}" wx:key="{{index}}"
+   data-sn="{{item.sn}}" catchtap="toPay">
+    <view class='order-no'>
+      <view class='gray'>订单编号：</view>{{item.sn}}
+      <view class='status {{item.className}}'>{{item.statusName}}</view>
+    </view>
+    <scroll-view class='goods-list' scroll-x="true" wx:if="{{item.orderGoodsList.length>1}}">
+        <image src="{{item.picUrl}}" wx:for="{{item.orderGoodsList}}" wx:key="{{item.id}}"></image>
+    </scroll-view>
+    <view class='content-box' wx:if="{{item.orderGoodsList.length == 1}}">
+      <image src="{{item.picUrl}}" wx:for="{{item.orderGoodsList}}" wx:key="{{item.id}}" ></image>
+      <view class='content' wx:for="{{item.orderGoodsList}}" wx:key="{{item.id}}" >
+        <view class='name'><text decode>{{item.goodsName}}</text></view>
+        <view class='spec line_two'>{{item.goodsSpecificationNameValue}}</view>
+        <view class='holder'> </view>
+        <view class='price'>
+          <wxc-price value="{{item.retailPrice}}" icon="sub"></wxc-price>
+          <text class='goodsNumber'>x{{item.goodsNumber}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='desc'>
+      共{{item.orderGoodsList.length}}个商品，总计：<wxc-price class='desc-price' value="{{item.amount}}"></wxc-price>
+    </view>
+    <view class='btn-bar' wx:if="{{item.payStatus == 0 && item.status == 0}}">
+      <view class="btn" size="mini" data-sn="{{item.sn}}" catchtap="toPay" wx:if="{{item.expiredSecond>0}}">
+        去支付 {{item.expiredTime}}
+      </view>
+    </view>
+  </view>
+  <view class='more'>{{hasMore?'正在拼命加载中...':'已加载全部'}}</view>
+</view>
+
+<wxc-loading is-show="{{isLoading}}" type="mall"></wxc-loading>

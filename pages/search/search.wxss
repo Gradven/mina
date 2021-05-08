@@ -1,0 +1,51 @@
+/* pages/search/search.wxss */
+@import "../template/template.wxss";
+
+page {
+  display: block;
+  min-height: 100%;
+  background-color: whitesmoke;
+}
+
+.top_action {
+  position: fixed;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  width: 100%;
+  height: 106rpx;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+.top_action .search_box {
+  width: 720rpx;
+  margin-left: 30rpx;
+  box-sizing: border-box;
+}
+
+.goods_container {
+  width: 100%;
+  margin-top: 106rpx;
+}
+
+.empty_search {
+  width: 100%;
+  height: 500rpx;
+  align-items: center;
+  flex-flow: column nowrap;
+  justify-content: center;
+  display: flex;
+  position: absolute;
+  top: 30%;
+  left: 0;
+  font-size: 28rpx;
+  color: #cdcdcd;
+}
+
+.empty_search .icon {
+  width: 280rpx;
+  height: 280rpx;
+  margin-bottom: 30rpx;
+  background: url("data:image/svg+xml,%3C?xml version='1.0' standalone='no'?%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg t='1531471203906' class='icon' style='' viewBox='0 0 1031 1024' version='1.1' xmlns='http://www.w3.org/2000/svg' p-id='6004' xmlns:xlink='http://www.w3.org/1999/xlink' width='201.3671875' height='200'%3E%3Cdefs%3E%3Cstyle type='text/css'%3E%3C/style%3E%3C/defs%3E%3Cpath d='M1020.366989 1013.038052a36.268936 36.268936 0 0 1-51.961227 0L767.93935 812.052027a41.568981 41.568981 0 0 0-53.623986-4.468666A447.594007 447.594007 0 0 1 0.783797 421.719291 450.919526 450.919526 0 0 1 394.961664 3.327493a424.107533 424.107533 0 0 1 89.37331-1.766682 39.282687 39.282687 0 0 1 36.372859 36.996394 36.788549 36.788549 0 0 1-37.100316 36.476781h-3.325519c-10.392245-0.83138-21.408025-1.350992-32.319883-1.350992a374.120833 374.120833 0 1 0 241.41186 659.90758A373.185531 373.185531 0 0 0 821.043723 482.098237a36.788549 36.788549 0 1 1 72.745718 6.339269 446.86655 446.86655 0 0 1-80.643824 218.237153 41.568981 41.568981 0 0 0 4.884355 52.896529l202.337017 202.025249a36.476781 36.476781 0 0 1 0 51.441615z' p-id='6005' fill='%23cdcdcd'%3E%3C/path%3E%3Cpath d='M692.907338 116.395123m-36.372859 0a36.372859 36.372859 0 1 0 72.745718 0 36.372859 36.372859 0 1 0-72.745718 0Z' p-id='6006' fill='%23cdcdcd'%3E%3C/path%3E%3Cpath d='M826.967303 290.569155m-36.372859 0a36.372859 36.372859 0 1 0 72.745718 0 36.372859 36.372859 0 1 0-72.745718 0Z' p-id='6007' fill='%23cdcdcd'%3E%3C/path%3E%3C/svg%3E") center center / 200rpx no-repeat;
+}

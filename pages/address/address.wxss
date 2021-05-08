@@ -1,0 +1,154 @@
+/* pages/address/address.wxss */
+
+page {
+  display: block;
+  min-height: 100%;
+  background-color: whitesmoke;
+}
+
+/* @import "../lib/weui.wxss";
+.picker{
+    padding: 13px;
+    background-color: #FFFFFF;
+} */
+
+.foot_action {
+  position: fixed;
+  bottom: 100rpx;
+  left: 0rpx;
+  display: flex;
+  width: 100%;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.bottomPadding {
+  padding-bottom: 220rpx;
+}
+
+.foot_action_row {
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+
+.foot_action .wx_import {
+  height: 90rpx;
+  width: 540rpx;
+  border: 2rpx solid #4cb033;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 45rpx;
+  background-color: white;
+}
+
+.foot_action .wx_import .text {
+  color: #4cb033;
+  font-size: 28rpx;
+  margin-left: 20rpx;
+}
+
+.foot_action .add_address {
+  color: white;
+  height: 90rpx;
+  width: 540rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 45rpx;
+  background-color: #fe5a5d;
+  margin-top: 30rpx;
+}
+
+.foot_action .add_address .text {
+  color: #fff;
+  font-size: 28rpx;
+  margin-left: 20rpx;
+}
+
+.foot_action .btn_row {
+  margin-top: 0rpx;
+  width: 300rpx;
+}
+
+.foot_action .text_row {
+  margin-left: 0rpx;
+}
+
+.container .list {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  flex-flow: column nowrap;
+}
+
+.container .list .item {
+  margin-top: 30rpx;
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  flex-flow: row nowrap;
+  background-color: white;
+  align-items: center;
+}
+
+.container .list .item .checkBox {
+  width: 110rpx;
+}
+
+.container .list .item .content {
+  flex-grow: 1;
+  padding-right: 40rpx;
+  display: flex;
+  flex-flow: column nowrap;
+  box-sizing: border-box;
+}
+
+.container .list .item .content .contract {
+  margin-top: 30rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.container .list .item .content .contract .phone {
+  font-size: 28rpx;
+  color: #495060;
+}
+
+.container .list .item .content .address {
+  margin-top: 30rpx;
+  font-size: 28rpx;
+  width: auto;
+  color: #495060;
+  overflow:hidden;
+  
+}
+
+.container .list .item .content .accept {
+  margin-top: 30rpx;
+  font-size: 24rpx;
+  color: #80848f;
+}
+
+.container .list .item .content .divider {
+  width: 100%;
+  height: 1rpx;
+  margin-top: 20rpx;
+  background-color: #e9eaec;
+}
+
+.container .list .item .content .action {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  padding: 20rpx 20rpx;
+}
+
+.container .list .item .content .contract .consignee {
+  flex-grow: 1;
+}

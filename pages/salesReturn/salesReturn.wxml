@@ -1,0 +1,63 @@
+<!--pages/salesReturn/salesReturn.wxml-->
+<view class='container' wx:if="{{orderGoodsInfo}}">
+  <view class='sr_flow'>
+    <text>提交退货</text>
+    <i-icon type="enter" color="#80848f" size="30"></i-icon>
+    <text>退货审核</text>
+    <i-icon type="enter" color="#80848f" size="30"></i-icon>
+    <text>寄回商品</text>
+    <i-icon type="enter" color="#80848f" size="30"></i-icon>
+    <text>商品返仓</text>
+    <i-icon type="enter" color="#80848f" size="30"></i-icon>
+    <text>退款到帐</text>
+  </view>
+
+   <view class='goods'>
+      <image class='img' mode='aspectFill' src="{{orderGoodsInfo.picUrl}}"></image>
+      <view class='intro'>
+        <text class='name line_two'>{{orderGoodsInfo.goodsName}}</text>
+        <view class='space_holder'> </view>
+        <text class='specs'>{{orderGoodsInfo.specsSimple}}</text> 
+        <view class='priceContainer'>
+        <text class='price grow'>￥{{orderGoodsInfo.retailPrice}}</text> 
+        <text class='amount'>x {{orderGoodsInfo.goodsNumber}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class='sr_amount_container'>
+      <text class='title'>退款金额</text>
+      <text class='amount'>￥{{orderGoodsInfo.amountRetail}}</text>
+    </view>
+
+    <view class='row'>
+        <text class='title'>退货理由</text>
+        <picker class='content'  bindchange="bindReasonChange" value="{{reasonIndex}}" range="{{reasons}}">
+          <text>{{reason}}</text>
+        </picker>
+        <i-icon type="enter" size="40" color="#bcc0c3" />
+      </view>
+
+    <form bindsubmit='save'>
+      <view class='row'>
+        <text class='title'>备注说明</text>
+        <input class='remark' placeholder='[必填] 请填写手机号码和备注信息' maxlength="200" value="{{remark}}" name="remark"></input>
+      </view>
+
+      <view class='address_container' wx:if="{{supplierInfo}}">
+        <text class='title'>寄回地址</text>
+        <view class='consignee'>
+          <text>收件人：</text>
+          <text class="name">客退组</text>
+          <text class='tel'>{{supplierInfo.serviceTel}}</text>
+        </view>
+        <text class='detail'>{{supplierInfo.serviceAddress}}</text>
+      </view>
+
+      <button class='btn_save' form-type='submit'>提交申请</button>
+
+      </form>
+</view>
+
+<wxc-loading is-show="{{isLoading}}" type="mall"></wxc-loading>
+<wxc-toast is-show="{{xToast.show}}" icon="{{xToast.icon}}" text="{{xToast.title}}" icon-color="#fe5a5d"></wxc-toast>

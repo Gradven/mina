@@ -1,0 +1,8 @@
+<view class="price price__status--{{status}}" style="{{status==='del'? ('color: ' + delColor) : ''}}">
+  <view class="price__icon price__icon--{{icon}} price__icon--{{status}}">{{symbol}}</view>
+    <text class="count price__count price__count--{{status}}">
+    <slot wx:if="{{!showValue}}"></slot>{{showValue && decimal !== 'small'?showValue:''}}
+    <text wx:if="{{showValue && decimal === 'small'}}">{{showValue}}</text>
+    <text wx:if="{{showValue && decimal === 'small'}}" class="count__decimal--small">.{{decimalNum}}</text>
+    </text>
+</view>

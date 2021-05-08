@@ -1,0 +1,19 @@
+{
+  "navigationStyle": "default",
+  "navigationBarTitleText": "店铺搜索",
+  "navigationBarTextStyle": "black",
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "i-modal": "../../dist/modal/index",
+    "wxc-search": "../../dist/search/index",
+    "i-tabs": "../../dist/tabs/index",
+    "i-tab": "../../dist/tab/index",
+    "i-toast": "../../dist/toast/index",
+    "i-icon": "../../dist/icon/index",
+    "wxc-icon": "../../dist/wxc-icon/index",
+    "wxc-price": "../../dist/price/index",
+    "wxc-loading": "../../dist/wxc-loading/index",
+    "goods-item": "../../dist/goods-item/index"
+  }
+}

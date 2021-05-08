@@ -1,0 +1,25 @@
+<view class='container'>
+  <view class='left-list'>
+    <view class='{{id == item.id?"item on ":"item" }}' 
+    wx:for="{{goodsCategory.childCategories}}" wx:key="{{item.id}}"
+      bindtap='changeCategory' data-id="{{item.id}}" >
+      {{item.name}}
+    </view>
+  </view>
+  <view class='box' wx:if="{{id == subCategory.id}}" wx:for="{{goodsCategory.childCategories}}"      
+    wx:for-item="subCategory" wx:key="{{subCategory.id}}">
+    <view class='subCategory' wx:for="{{subCategory.childCategories}}" wx:for-item="category" wx:key="{{category.id}}" >
+      <view class='title'>
+        {{category.name}}
+      </view>
+      <view class='logo-list'>
+        <view class='item' wx:for="{{category.childCategories}}" wx:key="{{item.id}}"
+          bindtap='toCategorySearchPage' data-id="{{item.id}}" data-name="{{item.name}}" >
+          <image class='logo' src="{{item.picUrl}}"></image>
+          <text>{{item.name}}</text>
+        </view>
+        <view class='clear'></view>
+      </view>
+    </view>
+  </view>
+</view>

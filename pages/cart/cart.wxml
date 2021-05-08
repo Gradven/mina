@@ -1,0 +1,60 @@
+<!--pages/cart/cart.wxml-->
+<view class='container footer_float'>
+  <!-- <view class='cart_top f_h_s' wx:if="{{shopInfo!=null}}">
+    <image class='img' mode='aspectFit' src="{{shopInfo.logo}}"></image>
+    <text>你正在 {{shopInfo.name}}</text>
+  </view> -->
+
+  <view class='cart_edit' wx:if="{{cartInfo.length>0}}">
+    <!-- <i-icon type="coordinates" size="40" color="#56cee0" /> -->
+    <!-- <text class='location'></text> -->
+    <view class='icon_btn' bindtap='handleEditModeChanged'>
+      <i-icon type="{{editMode?'right':'editor'}}" size="40" color="#80848f" />
+      <text>{{editMode?'完成编辑':'编辑商品'}}</text>
+    </view>
+  </view>
+
+  <view class='cart_list_container' wx:if="{{cartInfo.length>0}}">
+    <view class='cart_item' wx:for="{{cartInfo}}" wx:key="{{item.id}}" data-shop_id="{{item.shopId}}" data-goods_id="{{item.goodsId}}" data-product_id="{{item.productId}}" data-goods_number="{{ item.goodsNumber }}" bindtap='toGoodsDetailPage'>
+      <i-checkbox color="#212121" checked="{{item.checked}}" data-index="{{index}}" bindchange="handleItemCheckedChange">
+      </i-checkbox>
+      <image class='goods_img' mode='aspectFill' src="{{item.img}}"></image>
+      <view class='des f_v_s grow'>
+        <text class='goods_name'>{{item.goodsInfo.name}}</text>
+        <text class='goods_spec'>{{item.specs}}</text>
+        <view class='price' catchtap='preventPop'>
+          <text class='text'>￥{{item.productInfo.retailPrice}}</text>
+          <i-input-number value="{{ item.goodsNumber }}" min="1" max="100" data-index="{{index}}" bindchange="handleItemQuantityChange" />
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='action_footer' wx:if="{{cartInfo.length>0}}">
+    <view class='selectAll'>
+      <i-checkbox color="#212121" value="" checked="{{allSelected}}" bindchange="handleAllSelectedCheckedChange">
+      </i-checkbox>
+      <text class='text'>全选</text>
+    </view>
+    <text hidden="{{editMode}}">合计</text>
+    <text class='price' hidden="{{editMode}}">￥{{amountTotal}}</text>
+    <view class="settle" style="{{selectedCount==0? 'background-color:#bbbec4':''}}" bindtap='handleSettleClicked'>
+      <view class='content'>
+        <text>{{editMode?'删除所选':'结算'}}</text>
+        <text class='num' hidden="{{selectedCount==0?'none':''}}">({{selectedCount}})</text>
+      </view>
+    </view>
+  </view>
+  <wxc-loadmore is-end="{{true}}" text="End" wx:if="{{cartInfo.length>0}}"></wxc-loadmore>
+  <view class='cart_empty' style="top:{{cartEmptyTop}}px" wx:if="{{cartInfo.length==0}}">
+    <image class='icon'></image>
+    <text>购物车啥都没有</text>
+    <text class='btn' bindtap='toShop'>去店铺逛逛</text>
+  </view>
+</view>
+
+<wxc-popup class="popup_settle" animation-mode="bottom" align="bottom" locked="true">
+  <import src="../template/action_sheet/goods_settle.wxml" />
+  <template is="settle_sheet" data="{{addressInfo:addressInfo,amount:orderAmount}}" />
+</wxc-popup>
+<wxc-toast is-show="{{xToast.show}}" icon="{{xToast.icon}}" text="{{xToast.title}}" icon-color="#fe5a5d"></wxc-toast>
+<wxc-loading is-show="{{isLoading}}" type="mall"></wxc-loading>

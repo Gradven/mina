@@ -1,0 +1,78 @@
+/* pages/address_add/address_add.wxss */
+
+page {
+  display: block;
+  min-height: 100%;
+  width: 750rpx;
+  background-color: whitesmoke;
+}
+
+.panel {
+  margin-top: 30rpx;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: white;
+  padding: 0rpx 30rpx;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.panel .row {
+  width: 100%;
+  height: 120rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  font-size: 30rpx;
+}
+
+.panel .relative{
+  position:  relative;
+}
+
+.panel .row .phone_tip{
+  font-size: 20rpx;
+  position: absolute;
+  left: 220rpx;
+  bottom: 5rpx;
+  color: #fe5a5d;
+}
+
+.panel .row .title {
+  width: 220rpx;
+  color: #1c2438;
+}
+
+.panel .row .content {
+  font-weight: bold;
+  color: black;
+  /* flex-grow: 1; */
+  width: 430rpx;
+  font-size: 30rpx;
+}
+
+.panel .divider {
+  width: 100%;
+  height: 2rpx;
+  background-color: #e9eaec;
+}
+
+.btn_save{
+
+  color: white;
+  height: 90rpx;
+  width: 80%;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 45rpx;
+  background-color: #fe5a5d;
+  position: fixed;
+  line-height: 90rpx;
+  bottom: 400rpx;
+  left: 10%;
+  
+}
+
+
+

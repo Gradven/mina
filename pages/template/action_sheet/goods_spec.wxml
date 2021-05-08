@@ -1,0 +1,39 @@
+<template name="spec_sheet">
+  <view class='as_spec' catch:touchmove='preventTouchPop'>
+          <view class='container'>
+            <text class='name'>{{goods.name}}</text>
+            <view class='price'> <text>￥{{product.retailPrice}}</text> <text class='profit' wx:if="{{hasShop && isMember}}"> 赚￥{{product.profit}}</text> </view>
+            
+            <view class='divider'></view>
+            <scroll-view scroll-y class='scroll'>
+
+              <view wx:for="{{specs}}" wx:key="{{item.id}}" class='spec_row'>
+                <text class="spec_name">{{item.name}}</text>
+                <radio-group class="radio_group" data-spec_name="{{item.name}}" bindchange="specCheckedChanged">
+                  <view class='radio' wx:for="{{item.spec}}" wx:for-item="spec" wx:key="{{spec.id}}">
+                    <label class="{{spec.disable?'disable':spec.checked?'active':'normal'}}">
+                      <radio value="{{spec.value}}" checked="{{spec.checked}}" disabled="{{spec.disable}}" hidden='true'> </radio>
+                      {{spec.value}}
+                    </label>
+                    <image class='spec_img' mode='aspectFit' src="{{spec.picUrl}}" wx:if="{{spec.picUrl}}"></image>
+                  </view>
+                </radio-group>
+              </view>
+
+              <view class='quantity_row'>
+                <text>数量</text>
+                <i-input-number class='quantity' value="{{ quantity }}" min="1" max="100" bindchange="handleQuantityChange" />
+              </view>
+            </scroll-view>
+            <view class='bottom' wx:if="{{chooseSpec}}">
+              <text class='btn_add' bindtap='handleAdd2Cart'>加入购物车</text>
+              <text class='btn_purchase' bindtap='handleSpecConfirm'>立即购买</text>
+            </view>
+            <view class='bottom' wx:else>
+              <text class='btn_confirm' bindtap='handleSpecConfirm'>确认</text>
+            </view>
+          </view>
+          <image class='goods_img' src="{{product.picUrl?product.picUrl:goods.cover}}" mode='aspectFit'></image>
+          <i-icon type="close" size="40" color="#bcc0c3" class='close' data-which='spec' bindtap="onPopCloseClicked" />
+        </view>
+</template>

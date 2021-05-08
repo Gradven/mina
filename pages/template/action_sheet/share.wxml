@@ -1,0 +1,24 @@
+<template name="share_sheet">
+  <view class='share_sheet_container'>
+    <i-icon type="close" size="40" color="#bcc0c3" class='close' data-which="main" bindtap="handleShareCloseEvent" />
+    <view class='goods_info' wx:if="{{profit}}">
+      <view class='profit'>赚<wxc-price value="{{profit}}" class='price' icon="sub" decimal="2"></wxc-price></view>
+      <view class='des'>
+        <text>酒香也怕巷子深，快点告诉你的朋友们吧</text>
+        <text>(收益仅自己可见)</text>
+      </view>
+    </view>
+    <view class='main'>
+      <view class='col' data-to="friend" >
+        <wxc-icon size="80" type="weixin" color='#4cb033'></wxc-icon>
+        <button class='share_to_friend' plain="{{true}}" open-type="share" data-share="{{shareData}}" data-share_type="{{shareType}}" bindtap='onShareToFriendClicked'> </button>
+        <text class='text'>分享给好友</text>
+      </view>
+
+      <view class='col' data-to="timeline" bindtap='shareToTimeLine'>
+        <wxc-icon size="80" type="footprint" color='#4cb033'></wxc-icon>
+        <text class='text'>分享到朋友圈</text>
+      </view>
+    </view>
+  </view>
+</template>

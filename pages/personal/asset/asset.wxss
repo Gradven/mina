@@ -1,0 +1,168 @@
+page{
+  background: #eee;
+}
+.notice{
+  font-size:24rpx;
+  padding:0 24rpx;
+  color:#fff;
+  height:48rpx;
+  line-height:48rpx;
+  background-color: #cfb59f;
+}
+.asset-box{
+  position:relative;
+  margin:30rpx auto;
+  padding:30rpx;
+  width:700rpx;
+  height:300rpx;
+  box-sizing: border-box;
+  border-radius:30rpx;
+  background:#f55;
+}
+.asset-box .title{
+  font-size:30rpx;
+  height: 60rpx;
+  color: #fff;
+  line-height: 60rpx;
+}
+.asset-box .title .redpacket{
+  line-height: 60rpx;
+}
+.asset-box .balance{
+  font-size: 60rpx;
+  line-height: 120rpx;
+  color:#fff;
+}
+.asset-box .wating{
+  font-size:30rpx;
+  height: 60rpx;
+  color: #fff;
+  line-height: 60rpx;
+}
+.asset-box .wating .feedback_fill{
+  margin-left:10rpx;
+}
+
+.btn{
+  font-size:30rpx;
+  position: absolute;
+  top:120rpx;
+  right: 30rpx;
+  width: 150rpx;
+  height: 60rpx;
+  color:#fff;
+  text-align: center;
+  line-height: 60rpx;
+  border-radius: 60rpx;
+  border:1px solid #fff;
+}
+.desc{
+  font-size:20rpx;
+  position: absolute;
+  top:190rpx;
+  right: 30rpx;
+  width: 160rpx;
+  height: 30rpx;
+  color:#fff;
+  line-height: 30rpx;
+}
+
+.profit-list{
+  padding:30rpx;
+  background: #fff;
+}
+.profit-list .item{
+  clear:both;
+  height: 150rpx;
+  border-bottom:1px solid #eee;
+}
+.profit-list .item .content{
+  float:left;
+  margin-top:50rpx;
+  font-size:30rpx;
+  width: 300rpx;
+  height: 100rpx;
+}
+.profit-list .item .content .time{
+  font-size:20rpx;
+}
+.profit-list .item .profit{
+  float:right;
+  font-size:60rpx;
+  width: 350rpx;
+  line-height: 150rpx;
+  text-align: right;
+}
+.more{
+  clear: both;
+  font-size: 24rpx;
+  line-height: 72rpx;
+  text-align: center;
+  color:#999;
+}
+.feedbackpop{
+  position:fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  background:rgba(0,0,0,.7);
+  display:flex;
+  align-items: center;
+  justify-content:center;
+}
+.feedbackpop .feedbackbox{
+  position:relative;
+  padding:50rpx;
+  width: 600rpx;
+  background:#fff;
+  border-radius: 20rpx;
+  box-sizing: border-box;
+}
+.feedbackpop .feedbackbox .close{
+  position: absolute;
+  top:25rpx;
+  right: 25rpx;
+  color:#cbced2;
+}
+.feedbackpop .feedbackbox .content{
+  height: 520rpx;
+  background: url('https://hq-prod.oss-cn-hangzhou.aliyuncs.com/icon/fillback.png') top 280rpx center no-repeat;
+  background-size: contain;
+}
+
+.feedbackpop .feedbackbox .content .title{
+  font-size:32rpx;
+  font-weight: bold;
+  margin-bottom:30rpx;
+}
+
+.feedbackpop .feedbackbox .content .text{
+  font-size:23rpx;
+  margin-bottom: 200rpx;
+  line-height:48rpx;
+  text-indent: 2em;
+}
+
+.feedbackpop .feedbackbox .content .status{
+  font-size:20rpx;
+  margin: 0 auto;
+  width:350rpx;
+  line-height:48rpx;
+}
+
+.feedbackpop .feedbackbox .content .status .left{
+  float: left;
+  display: inline-block;
+}
+
+.feedbackpop .feedbackbox .content .status .right{
+  float: right;
+  margin-right: 20rpx;
+  display: inline-block;
+}
+
+.red{
+  display: inline;
+  color:#f55;
+}

@@ -1,0 +1,210 @@
+/* pages/salesReturn/detail/salesReturnDetail.wxss */
+
+
+page {
+  display: block;
+  min-height: 100%;
+  background-color: whitesmoke;
+}
+
+
+.container .statusContainer{
+  width: 100%;
+  height: 150rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  font-size: 38rpx;
+  color: black;
+  background-color: #fff4e2;
+}
+
+.container .row {
+  width: 100%;
+  height: 120rpx;
+  padding: 0 30rpx;
+  margin-top: 20rpx;
+  background-color: white;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  font-size: 30rpx;
+  font-weight: bold;
+  justify-content: space-between;
+}
+
+
+.container .address_container {
+  margin-top: 20rpx;
+  width: 100%;
+  padding: 30rpx 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: white;
+}
+
+.container .contract_container{
+  margin-top: 20rpx;
+  width: 100%;
+  padding: 30rpx 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: white;
+  font-size: 28rpx;
+}
+
+.container .contract_container  .title {
+  font-size: 30rpx;
+  color: black;
+  font-weight: bold;
+  margin-top: 0rpx;
+}
+
+.container .contract_container .contract_row {
+  margin-top: 20rpx;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  color: #1c2438;
+}
+
+.container .contract_container .contract_row .subTitle{
+  margin-right: 10rpx;
+  width: 3em;
+  color: #80848f;
+}
+
+
+.container .address_container .title {
+  font-size: 30rpx;
+  color: black;
+  font-weight: bold;
+}
+
+.container .address_container .consignee {
+  margin-top: 30rpx;
+  font-size: 28rpx;
+  color: #80848f;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.container .address_container .consignee .name {
+  font-size: 28rpx;
+  color: #1c2438;
+  flex-grow: 1;
+}
+
+.container .address_container .consignee .tel{
+   color: #1c2438;
+}
+
+.container .address_container .detail {
+  margin-top: 30rpx;
+  font-size: 26rpx;
+  color: #80848f;
+}
+
+.container .goods {
+  display: flex;
+  background-color: white;
+  flex-flow: row nowrap;
+  width: 100%;
+  align-items: center;
+  padding: 30rpx 30rpx;
+  box-sizing: border-box;
+}
+
+.container .goods .img {
+  width: 220rpx;
+  height: 220rpx;
+  border-radius: 20rpx;
+}
+
+.container .goods .intro {
+  width: 470rpx;
+  padding-left: 30rpx;
+  height: 200rpx;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.container .goods .intro .space_holder {
+  flex-grow: 1;
+}
+
+.container .goods .intro .specs {
+  font-size: 22rpx;
+  color: #80848f;
+}
+
+.container .goods .intro .priceContainer {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  color: #80848f;
+  font-size: 28rpx;
+  align-items: center;
+  margin-top: 30rpx;
+}
+
+.container .goods .intro .priceContainer .price {
+  color: #1c2438;
+
+}
+
+.container .goods .intro .name {
+  font-size: 26rpx;
+  color: #1c2438;
+}
+
+.container .order_sn{
+  margin-top: 20rpx;
+  width: 100%;
+  padding: 30rpx 30rpx;
+  padding-bottom: 0rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #80848f;
+  display: flex;
+  flex-flow: row nowrap;
+  background-color: white;
+}
+
+.container .order_sn .value{
+  color: black;
+}
+
+.action_footer {
+  height: 110rpx;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-end;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  background-color: white;
+  font-size: 28rpx;
+  z-index: 100;
+  box-shadow: 0 -5rpx 15rpx #eee;
+  padding-right: 30rpx;
+}
+
+.action_footer .cancel{
+  color: #fe5a5d;
+  width: 200rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border: 2rpx solid #fe5a5d;
+  border-radius: 60rpx;
+  font-size: 28rpx;
+}

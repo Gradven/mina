@@ -1,0 +1,57 @@
+.content-box{
+  width: 750rpx;
+  background: url('https://xiaomaimai-test.oss-cn-hangzhou.aliyuncs.com/file-read-284.png') top center no-repeat;
+  background-size:cover
+}
+
+.user-info{
+  position: relative;
+  top:245rpx;
+  margin:0 auto;
+  padding:150rpx 50rpx 50rpx;
+  width:600rpx;
+  background:#fff;
+  box-sizing:border-box;
+  border-radius: 50rpx;
+  box-shadow: 2rpx 2rpx 8rpx #eee;
+}
+
+.user-info image{
+  position: absolute;
+  top:-135rpx;
+  left:165rpx;
+  display: block;
+  margin:0 auto;
+  width:250rpx;
+  height: 250rpx;
+  border-radius: 300rpx;
+  border:10rpx solid #fff;
+}
+
+.user-info .nickname{
+  font-size:30rpx;
+  line-height: 45rpx;
+  text-align: center;
+}
+
+.message{
+  font-size:40rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color:#333;
+}
+
+.btn-box{
+  width:100%;
+}
+
+.btn-box .btn{
+  margin: 0 auto;
+  width:400rpx;
+  color:#fff;
+  height: 90rpx;
+  text-align:center;
+  line-height: 90rpx;
+  background: #ff4241;
+  border-radius: 60rpx;
+}

@@ -1,0 +1,63 @@
+page{
+  height: 100%;
+}
+.container{
+  position: relative;
+  height: 100%;
+  background:#eee;
+}
+.input-box{
+  position: relative;
+  top:30rpx;
+  padding:0 30rpx;
+  height: 120rpx;
+  width: 100%;
+  background: #fff;
+  box-sizing: border-box;
+}
+.input-box view{
+  float:left;
+  line-height: 120rpx;
+}
+.input-box view input{
+  margin:0 10rpx;
+  width: 500rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+}
+.input-box .btn{
+  position: absolute;
+  right:30rpx;
+  font-size:30rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  color:#05f;
+}
+.desc-box{
+  margin-top:60rpx;
+  padding:0 30rpx;
+  box-sizing: border-box;
+}
+.desc-box .desc{
+  font-size:30rpx;
+  line-height: 45rpx;
+  color:#999;
+}
+.desc-box .desc text{
+  color:#333;
+}
+.submit-box{
+  position: absolute;
+  bottom:30rpx;
+  width: 100%;
+}
+.submit{
+  margin:50rpx auto;
+  width: 650rpx;
+  height:72rpx;
+  line-height:72rpx;
+  color:#fff;
+  border-radius: 30rpx;
+  text-align: center;
+  background: #f33;
+}

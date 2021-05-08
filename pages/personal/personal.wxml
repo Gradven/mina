@@ -1,0 +1,85 @@
+<i-tabs current="{{ current }}" bindchange="handleTabChange" wx:if="{{userInfo.shopId}}">
+    <i-tab key="tab1" title="销售管理"></i-tab>
+    <i-tab key="tab2" title="个人中心"></i-tab>
+</i-tabs>
+<view class="user-info {{current=='tab1'?'small':''}}">
+  <image src="{{current=='tab1'?shopInfo.logo:userInfo.avatar}}"></image>
+  <view class='nickname'  style='left:{{left}}px'>{{current=='tab1'?shopInfo.name:userInfo.nickname}}</view>
+</view>
+<view class='sale-manage' wx:if="{{current=='tab1' && userInfo.shopId}}">
+  <view class='shop-wallet'>
+    <view class='wallet' data-page='salesAmount' data-count="{{shopWallet.shopSalesData.salesAmount || '0'}}" bindtap='openPage'>
+      <view class='title'>小店销售<span>（元）</span></view>
+      <view class='value'>
+        <wxc-price value="{{shopWallet.shopSalesData.salesAmount || '0'}}" icon="sub" wx:if="{{shopWallet.shopId}}"></wxc-price>
+      </view>
+    </view>
+    <view class='wallet-count'>
+      <view class='profit' data-page='profitAmount' data-count="{{shopWallet.allProfit || '0'}}" bindtap='openPage'>
+        <view class='title'>小店收入<span>（元）</span></view>
+        <view class='value'>
+          <wxc-price value="{{shopWallet.allProfit || '0'}}" icon="sub" wx:if="{{shopWallet.shopId}}"></wxc-price>
+        </view>
+      </view>
+      <view class='order-count' data-page='orderCount' data-count='{{shopWallet.shopSalesData.orderCount || 0}}' bindtap='openPage'>
+        <view class='title'>成交订单<span>（笔）</span></view>
+        <view class='value'>{{shopWallet.shopSalesData.orderCount || 0}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='list-box'>
+    <view class='item' data-page='asset' bindtap='openPage'>
+      我的资产
+      <i-icon class='enter' size="40" color="#999" type="enter" />
+    </view>
+    <view class='item' data-page='servicefee' bindtap='openPage'>
+      服务年费
+      <i-icon class='enter' size="40" color="#999" type="enter" />
+    </view>
+    <!-- <view class='item' data-page='shareNewShop' bindtap='openPage'>
+      邀请开店
+      <i-icon class='enter' size="40" color="#999" type="enter" />
+    </view> -->
+    <view class='item' data-page='guide' bindtap='openPage'>
+      新手指引
+      <i-icon class='enter' size="40" color="#999" type="enter" />
+    </view>
+    <view class='item last' data-page='phone' bindtap='openPage'>
+      客服电话
+      <view class='phone'>
+        0731-85577208
+      </view>
+      <i-icon class='enter' size="40" color="#999" type="enter" />
+    </view>
+  </view>
+</view>
+<view class='personal-box' wx:if="{{current=='tab2' || !userInfo.shopId}}" >
+  <view class='function-area'>
+    <view class='item' data-id="{{item.id}}" bindtap='setActiveFunId'
+     wx:for="{{funList}}" wx:key="{{item.id}}" >
+      {{item.name}}
+      <view class='count' wx:if="{{unPay && unPay>0 && index==0}}">{{unPay}}</view>
+      <view class='count' wx:if="{{unReceive && unReceive>0 && index==1}}">{{unReceive}}</view>
+    </view>
+  </view>
+  <view class='list-box'>
+    <view class='item' data-page='shops' bindtap='openPage'>
+      <i-icon class='before' size="60" color="#fe6738" type="browse_fill" />
+      访问过的店铺
+      <view class='logo-list'>
+        <image src="{{item.logo}}" wx:key="{{index}}" wx:for="{{lastShopList}}"></image>
+      </view>
+      <i-icon class='enter' size="40" color="#999" type="enter" />
+    </view>
+    <view class='item' data-page='address' bindtap='openPage'>
+      <i-icon class='before' size="60" color="#32dbf8" type="coordinates_fill" />
+      地址管理
+      <i-icon class='enter' size="40" color="#999" type="enter" />
+    </view>
+    <view class='item last' data-page='invoice' bindtap='openPage'>
+      <i-icon class='before' size="60" color="#ffb567" type="barrage_fill" />
+      发票管理
+      <i-icon class='enter' size="40" color="#999" type="enter" />
+    </view>
+  </view>
+</view>

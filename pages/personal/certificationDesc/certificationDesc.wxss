@@ -1,0 +1,5 @@
+.bg{
+  padding:80rpx 0;
+  width: 750rpx;
+  height: 1200rpx;
+}
